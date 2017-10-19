@@ -42,13 +42,12 @@ p {
 	/*padding-left: 0;*/
 }
 /* overiding bootstrap source */
+
 .bg-layer.main {
 	background: #303132;
 }
-.container {
-	max-width: 790px;
-	padding: 39px 0;
-}
+
+/* mobile first */
 #header {
 	/*position: fixed;*/
 }
@@ -58,17 +57,18 @@ p {
 }
 #header .inner .logo {
 	float: left;
+	width: 100px;
 }
 #header .inner .nav {
 	float: right;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 #header .inner .nav ul li {
 	float: left;
 }
 #header .inner .nav ul li a {
 	display: inline-block;
-	padding-right: 30px;
+	padding-right: 15px;
 }
 #header .inner .nav ul li:last-child a {
 	padding-right: 0;
@@ -78,6 +78,7 @@ p {
 	color: #d0cfcf;
 	position: relative;
 	transition: color 0.2s ease;
+	font-size: 12px;
 }
 #header .inner .nav ul li a:hover span,
 #header .inner .nav ul li a:active span {
@@ -106,79 +107,121 @@ p {
 	width: 11px;
 	height: 9px;
 }
-.content {
-	padding: 29px 0;
-}
 .main .banner.big {
 	margin-bottom: 12px;
 }
-.main .grid figure .thum {
-	/*padding: 0 1px;*/
-	position: relative;
-}
-.main .grid figure .thum .total-time {
-	display: inline-block;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	color: #ffffff;
-	background: rgba(0, 0, 0, 0.5);
-	padding: 1px 7px;
-	font-size: 10px;
-}
-.main .grid figure figcaption {
-	padding: 12px;
-}
-
-.main .grid figure figcaption span {
-	display: inline-block;
-	font-size: 12px;
-}
-.main .grid figure figcaption > p {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-.main .grid figure figcaption .publisher {
-	display: block;
-}
 .main .grid .row {
-	margin-top: 13px;
+	/*margin-top: 13px;*/
 }
 .main .grid .row:first-child {
 	margin-top: 0;
 }
-.more-cnt {
-	margin-top: 40px;
-	text-align: center;
+.grid .m-col-1 {
+	width: 100%;
+	float: none;
 }
-.more-cnt > a {
-	display: inline-block;
-}
-.more-cnt span {
-	display: block;
-	font-size: 14px;
-	color: #ffffff;
-	margin-bottom: 7px;
-}
-.more-cnt span:last-child {
-	width: 15px;
-	height: 8px;
-	background: url(../images/arrow_bottom.png) center center / cover no-repeat;
-	margin: 0 auto;
-}
+/* mobile first */
 
 
 /* public module */
 .grid .row {
 	margin: 0;
 }
-.grid .col-4 {
-	width: 33%;
-	float: left;
-	margin-right: 0.5%;
-}
-.grid .col-4:last-child {
-	margin-right: 0;
-}
 /* public module */
+
+/* media querys branch point */
+/* 768px 이상 - 태블릿 */
+@media all and (min-width: 768px) {
+
+}
+/* 768px 이상 - 태블릿 */
+/* 992px 이상 - 데스크탑 */
+@media all and (min-width: 992px) {
+	#header .inner .logo {
+		width: auto;
+	}
+	#header .inner .nav ul li a {
+		padding-right: 30px;
+	}
+	#header .inner .nav ul li a span {
+		font-size: 18px;
+	}
+	.container {
+		max-width: 790px;
+		padding: 39px 0;
+	}
+	.content {
+		padding: 29px 0;
+	}
+	.main .grid figure .thum {
+		/*padding: 0 1px;*/
+		position: relative;
+	}
+	.main .grid figure .thum .total-time {
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		color: #ffffff;
+		background: rgba(0, 0, 0, 0.5);
+		padding: 1px 7px;
+		font-size: 10px;
+	}
+	.main .grid figure figcaption {
+		padding: 12px;
+	}
+
+	.main .grid figure figcaption span {
+		display: inline-block;
+		font-size: 12px;
+	}
+	.main .grid figure figcaption > p {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.main .grid figure figcaption .publisher {
+		display: block;
+	}
+	.more-cnt {
+		margin-top: 40px;
+		text-align: center;
+	}
+	.more-cnt > a {
+		display: inline-block;
+	}
+	.more-cnt span {
+		display: block;
+		font-size: 14px;
+		color: #ffffff;
+		margin-bottom: 7px;
+	}
+	.more-cnt span:last-child {
+		width: 15px;
+		height: 8px;
+		background: url(../images/arrow_bottom.png) center center / cover no-repeat;
+		margin: 0 auto;
+	}
+
+	.grid .d-col-3 {
+		width: 33%;
+		float: left;
+		margin-right: 0.5%;
+	}
+	.grid .d-col-3:nth-child(1),
+	.grid .d-col-3:nth-child(2),
+	.grid .d-col-3:nth-child(3) {
+		margin-top: 0;
+	}
+	.grid .d-col-3:nth-of-type(3n) {
+		margin-right: 0;
+	}
+	.grid .d-col-3 {
+		margin-top: 18px;
+	}
+	.grid .d-col-3:last-child {
+		/*margin-right: 0;*/
+	}
+}
+/* 992px 이상 - 데스크탑 */
+/* media querys branch point */
