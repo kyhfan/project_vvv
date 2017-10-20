@@ -49,10 +49,13 @@ p {
 
 /* mobile first */
 #header {
-	/*position: fixed;*/
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 9999;
 }
 #header .inner {
-	padding: 18px 0;
+	padding: 18px;
 	background: #303132;
 }
 #header .inner .logo {
@@ -116,9 +119,63 @@ p {
 .main .grid .row:first-child {
 	margin-top: 0;
 }
+.grid .row .m-col-1:first-child {
+	margin-top: 0;
+}
 .grid .m-col-1 {
 	width: 100%;
 	float: none;
+	margin-top: 18px;
+}
+.main .grid figure .thum {
+	position: relative;
+}
+.main .grid figure .thum .total-time {
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 1px 7px;
+	font-size: 10px;
+}
+.main .grid figure figcaption {
+	padding: 12px;
+}
+.content {
+	padding: 100px 0 29px;
+}
+.main .grid figure figcaption span {
+	display: inline-block;
+	font-size: 12px;
+}
+.main .grid figure figcaption > p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.main .grid figure figcaption .publisher {
+	display: block;
+}
+.more-cnt {
+	margin-top: 40px;
+	text-align: center;
+}
+.more-cnt > a {
+	display: inline-block;
+}
+.more-cnt span {
+	display: block;
+	font-size: 14px;
+	color: #ffffff;
+	margin-bottom: 7px;
+}
+.more-cnt span:last-child {
+	width: 15px;
+	height: 8px;
+	background: url(../images/arrow_bottom.png) center center / cover no-repeat;
+	margin: 0 auto;
 }
 /* mobile first */
 
@@ -132,11 +189,47 @@ p {
 /* media querys branch point */
 /* 768px 이상 - 태블릿 */
 @media all and (min-width: 768px) {
-
+	.container {
+		padding: 0;
+	}
+	#header {
+	}
+	#header .inner {
+		max-width: 750px;
+		margin: 0 auto;
+		padding: 18px 0;
+	}
+	#header .inner .logo {
+		width: 150px;
+	}
+	#header .inner .nav {
+		margin-top: 25px;
+	}
+	.grid .t-col-2 {
+		width: 49%;
+		float: left;
+		margin-right: 2%;
+	}
+	.grid .t-col-2:nth-child(1),
+	.grid .t-col-2:nth-child(2) {
+		margin-top: 0;
+	}
+	.grid .t-col-2:nth-of-type(2n) {
+		margin-right: 0;
+	}
+	.grid .t-col-2 {
+		margin-top: 18px;
+	}
+	.grid .t-col-2:last-child {
+		/*margin-right: 0;*/
+	}
 }
 /* 768px 이상 - 태블릿 */
 /* 992px 이상 - 데스크탑 */
 @media all and (min-width: 992px) {
+	#header {
+		position: static;
+	}
 	#header .inner .logo {
 		width: auto;
 	}
@@ -153,56 +246,6 @@ p {
 	.content {
 		padding: 29px 0;
 	}
-	.main .grid figure .thum {
-		/*padding: 0 1px;*/
-		position: relative;
-	}
-	.main .grid figure .thum .total-time {
-		display: inline-block;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		color: #ffffff;
-		background: rgba(0, 0, 0, 0.5);
-		padding: 1px 7px;
-		font-size: 10px;
-	}
-	.main .grid figure figcaption {
-		padding: 12px;
-	}
-
-	.main .grid figure figcaption span {
-		display: inline-block;
-		font-size: 12px;
-	}
-	.main .grid figure figcaption > p {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-	.main .grid figure figcaption .publisher {
-		display: block;
-	}
-	.more-cnt {
-		margin-top: 40px;
-		text-align: center;
-	}
-	.more-cnt > a {
-		display: inline-block;
-	}
-	.more-cnt span {
-		display: block;
-		font-size: 14px;
-		color: #ffffff;
-		margin-bottom: 7px;
-	}
-	.more-cnt span:last-child {
-		width: 15px;
-		height: 8px;
-		background: url(../images/arrow_bottom.png) center center / cover no-repeat;
-		margin: 0 auto;
-	}
-
 	.grid .d-col-3 {
 		width: 33%;
 		float: left;
