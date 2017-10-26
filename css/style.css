@@ -82,10 +82,14 @@ button {
 	right: 0;
 	z-index: 9999;
 }
-#header .inner {
-	/*padding: 10% 8%;*/
-	padding: 32px 30px;
+#header > .inner {
+	/*padding: 32px 68px 32px 30px;*/
+	padding: 32px 8.6%;
 	background: #ffffff;
+}
+#header > .inner > .wrapper {
+	position: relative;
+	padding-right: 12.4%;
 }
 #header .inner .logo {
 	float: left;
@@ -95,7 +99,7 @@ button {
 #header .inner .nav {
 	float: right;
 	/*margin-top: 10px;*/
-	margin-top: 3.7%;
+	margin-top: 3%;
 }
 #header .inner .nav ul li {
 	float: left;
@@ -113,7 +117,7 @@ button {
 	-webkit-transition: color 0.2s ease;
 	transition: color 0.2s ease;
 	font-size: 12px;
-	font-weight: 700;
+	font-weight: 900;
 }
 #header .inner .nav ul li a:hover span {
 	color: #212121;
@@ -132,8 +136,68 @@ button {
 #header .inner .nav ul li a:hover span::after {
 	width: 100%;
 }
+#header .inner .nav ul li a.active span::after {
+	width: 100%;
+}
 #header .inner .nav .search-desktop {
 	display: none;
+}
+#header .inner .nav .search-mobile {
+	position: absolute;
+	top: 0;
+	right: -4px;
+	margin-top: 3%;
+}
+#header .inner .nav .search-mobile button .icon-search {
+	display: block;
+	background: url(../images/search_mobile.png) center center / cover no-repeat;
+	width: 20px;
+	height: 20px;
+}
+#header .box-search {
+	background: #f2f2f2;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+#header .box-search .wrapper {
+	height: 100%;
+}
+#header .box-search .wrapper > div {
+	float: left;
+	height: 100%;
+}
+#header .box-search .input-box {
+	width: 79%;
+}
+#header .box-search .input-box .inner {
+	height: 100%;
+}
+#header .box-search .input-box input[type="text"] {
+	width: 100%;
+	height: 100%;
+	font-size: 15px;
+	padding: 0 32px;
+}
+#header .box-search .close-box {
+	width: 21%;
+	height: 100%;
+}
+#header .box-search .close-box button {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#header .box-search .close-box button .icon-close {
+	display: block;
+	margin: 0 auto;
+	background: url(../images/search_close.png) center center / cover no-repeat;
+	width: 16.5px;
+	height: 17px;
 }
 /*#header .inner .nav ul li:last-child a span:last-child::after {
 	content: none;
@@ -145,6 +209,30 @@ button {
 	width: 11px;
 	height: 9px;
 }*/
+.content {
+	/*display: none;*/
+	padding: 100px 0 44px;
+}
+.search-result {
+	display: none;
+	padding: 100px 0 44px;
+}
+.container .rs-text {
+	width: 83.4%;
+	margin: 0 auto;
+	padding: 19px 0 32px;
+	color: #212121;
+	font-size: 12px;
+	line-height: 12px;
+}
+.container .rs-text .ellipse {
+	display: inline-block;
+	background: url(../images/result_ellipse.png) center center / cover no-repeat;
+	width: 5px;
+	height: 5px;
+	vertical-align: middle;
+	margin-right: 2px;
+}
 .banner.mobile {
 	display: block;
 }
@@ -183,10 +271,6 @@ button {
 	padding: 14px 16px 30px;
 	border: 1px solid #d1d1d1;
 	border-top: 0;
-}
-.content {
-	padding: 100px 0 44px;
-	/*padding: 100px */
 }
 .main .grid figure figcaption span {
 	display: inline-block;
@@ -232,9 +316,9 @@ button {
 .sorting a {
 	display: inline-block;
 	position: relative;
-	margin-right: 25px;
-	font-size: 10px;
-	font-weight: 700;
+	margin-right: 40px;
+	font-size: 12px;
+	font-weight: 900;
 }
 .sorting a::after {
 	content: "";
@@ -290,6 +374,26 @@ button {
 	height: 5px;
 	background: url(../images/copyright.png) center center / cover no-repeat;
 }
+
+
+/* my_vvv */
+.myVVV > .wrapper > .rs-text {
+	padding: 2px 0;
+}
+.myVVV > .wrapper > .rs-text .name {
+	display: inline-block;
+	margin-right: 3px;
+}
+.myVVV .sorting {
+	padding: 40px 0;
+}
+.myVVV .sorting a .count {
+	display: inline-block;
+	font-size: 9px;
+	font-weight: 700;
+}
+/* my_vvv */
+
 /* mobile first */
 
 
@@ -358,7 +462,8 @@ button {
 }*/
 /* 768px 이상 - 태블릿 */
 /* 992px 이상 - 데스크탑 */
-@media all and (min-width: 992px) {
+/*@media all and (min-width: 992px)*/
+@media all and (min-width: 768px) {
 	.scrolled #header {
 		position: fixed;
 		top: 0;
@@ -395,6 +500,9 @@ button {
 		/*width: 1040px;*/
 		margin: 0 auto;
 	}
+	#header > .inner > .wrapper {
+		padding-right: 0;
+	}
 	#header .inner .logo {
 		width: auto;
 	}
@@ -411,7 +519,7 @@ button {
 	}
 	#header .inner .nav ul li a span {
 		font-size: 26px;
-		font-weight: 700;
+		font-weight: 900;
 	}
 	#header .inner .nav .search-mobile {
 		display: none;
@@ -437,11 +545,14 @@ button {
 		top: 6px;
 		right: 0;
 	}
-	#header .inner .nav .search-desktop .input-box button .icon_search {
+	#header .inner .nav .search-desktop .input-box button .icon-search {
 		display: block;
 		background: url(../images/search_desktop.png) center center / cover no-repeat;
 		width: 31px;
 		height: 32px;
+	}
+	#header .box-search {
+		display: none;
 	}
 	.content {
 		padding: 215px 0 86px;
@@ -452,6 +563,35 @@ button {
 		max-width: 1040px;
 		/*width: 1040px;*/
 		margin: 0 auto;
+	}
+	.search-result {
+		padding: 69px 0 86px;
+	}
+	.search-result > .wrapper {
+		max-width: 1040px;
+		/*width: 1040px;*/
+		margin: 0 auto;
+		position: relative;
+	}
+	.search-result .rs-text {
+		position: absolute;
+		max-width: 1040px;
+		top: -120px;
+		z-index: 2;
+		width: auto;
+		margin: 0 auto;
+		padding: 0;
+		color: #212121;
+		font-size: 26px;
+		line-height: 26px;
+	}
+	.search-result .rs-text .ellipse {
+		display: inline-block;
+		background: url(../images/result_ellipse.png) center center / cover no-repeat;
+		width: 13px;
+		height: 13px;
+		vertical-align: middle;
+		margin-right: 2px;
 	}
 	.banner.desktop {
 		display: block;
@@ -499,6 +639,39 @@ button {
 	.more-cnt {
 		display: block;
 	}
+
+	/* my_vvv */
+	.myVVV {
+		padding: 0 0 86px;
+	}
+	.myVVV > .wrapper > .rs-text {
+		position: absolute;
+		padding: 2px 0;
+		max-width: 1040px;
+		top: -75px;
+		font-size: 23px;
+		line-height: 27px;
+		padding: 0;
+	}
+	.myVVV > .wrapper > .rs-text .name {
+		display: inline-block;
+		margin-right: 3px;
+		font-size: 27px;
+	}
+	.myVVV > .wrapper > .rs-text .ellipse {
+		width: 13px;
+		height: 13px;
+	}
+	.myVVV .sorting {
+		padding: 72px 0;
+	}
+	.myVVV .sorting a .count {
+		display: inline-block;
+		font-size: 18px;
+		font-weight: 700;
+	}
+	/* my_vvv */
+
 	#footer .inner .logo {
 		width: 76px;
 		margin-bottom: 0;

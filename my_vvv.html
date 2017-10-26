@@ -21,40 +21,41 @@
 				<div class="container">
 					<div class="layout-desktop"></div>
 					<div id="header">
-						<div class="inner clearfix">
-							<div class="logo">
-								<a href="javascript:void(0)">
-									<img src="./images/vvv_logo.png" alt="홈으로">
-								</a>
-							</div>
-							<div class="nav">
-								<ul class="clearfix">
-									<li>
-										<a href="javascript:void(0)">
-											<span>LOGIN</span>
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)">
-											<span>MY VVV</span>
-											<!-- <span></span> -->
-										</a>
-									</li>
-								</ul>
-								<div class="search-desktop">
-									<div class="input-box">
-										<input type="text" placeholder="Search">
-										<button>
+						<div class="inner">
+							<div class="wrapper clearfix">
+								<div class="logo">
+									<a href="javascript:void(0)">
+										<img src="./images/vvv_logo.png" alt="홈으로">
+									</a>
+								</div>
+								<div class="nav">
+									<ul class="clearfix">
+										<li>
+											<a href="javascript:void(0)">
+												<span>LOG OUT</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)" class="active">
+												<span>MY VVV</span>
+											</a>
+										</li>
+									</ul>
+									<div class="search-desktop">
+										<div class="input-box">
+											<input type="text" placeholder="Search">
+											<button>
+												<span class="blind">검색</span>
+												<span class="icon-search"></span>
+											</button>
+										</div>
+									</div>
+									<div class="search-mobile">
+										<button onclick="actionSearch();">
 											<span class="blind">검색</span>
 											<span class="icon-search"></span>
 										</button>
 									</div>
-								</div>
-								<div class="search-mobile">
-									<button onclick="actionSearch();">
-										<span class="blind">검색</span>
-										<span class="icon-search"></span>
-									</button>
 								</div>
 							</div>
 						</div>
@@ -74,28 +75,22 @@
 							</div>
 						</div>
 					</div>
-					<div class="content">
+					<div class="content myVVV">
 						<div class="wrapper">
-							<div class="banner big mobile">
-								<div class="slide">
-									<a href="javascript:void(0)">
-										<img src="./images/main_banner_m.jpg">
-									</a>
-								</div>
-							</div>
-							<div class="banner big desktop">
-								<div class="slide">
-									<a href="javascript:void(0)">
-										<img src="./images/main_banner_pc.jpg">
-									</a>
-								</div>
+							<div class="rs-text">
+								<p>
+									<span class="ellipse"></span>
+									<span class="name">오준우</span>님 반갑습니다
+								</p>
 							</div>
 							<div class="sorting">
 								<a href="javascript:void(0)" class="active">
-									<span>NEW</span>
+									<span>UPLOAD</span>
+									<span class="count">(10)</span>
 								</a>
 								<a href="javascript:void(0)">
-									<span>BEST</span>
+									<span>LIKE</span>
+									<span class="count">(1)</span>
 								</a>
 							</div>
 							<div class="grid">
