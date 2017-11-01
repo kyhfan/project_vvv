@@ -5,42 +5,44 @@
 		<div id="vvv" class="">
 			<div class="bg-layer main">
 				<div class="container">
-					<div class="layout-desktop"></div>
+					<div class="desktop-layout big"></div>
 					<div id="header">
 						<div class="inner clearfix">
-							<div class="logo">
-								<a href="javascript:void(0)">
-									<img src="./images/vvv_logo.png" alt="홈으로">
-								</a>
-							</div>
-							<div class="nav">
-								<ul class="clearfix">
-									<li>
-										<a href="javascript:void(0)">
-											<span>LOGIN</span>
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)">
-											<span>MY VVV</span>
-											<!-- <span></span> -->
-										</a>
-									</li>
-								</ul>
-								<div class="search-desktop">
-									<div class="input-box">
-										<input type="text" placeholder="Search" onKeyUp="search_video(this)" >
-										<button>
+							<div class="wrapper">
+								<div class="logo">
+									<a href="javascript:void(0)">
+										<img src="./images/vvv_logo.png" alt="홈으로">
+									</a>
+								</div>
+								<div class="nav">
+									<ul class="clearfix">
+										<li>
+											<a href="javascript:void(0)">
+												<span>LOGIN</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<span>MY VVV</span>
+												<!-- <span></span> -->
+											</a>
+										</li>
+									</ul>
+									<div class="desktop-layout">
+										<div class="input-box">
+											<input type="text" placeholder="Search" onKeyUp="search_video(this)">
+											<button>
+												<span class="blind">검색</span>
+												<span class="icon-search"></span>
+											</button>
+										</div>
+									</div>
+									<div class="mobile-layout">
+										<button onclick="actionSearch();">
 											<span class="blind">검색</span>
 											<span class="icon-search"></span>
 										</button>
 									</div>
-								</div>
-								<div class="search-mobile">
-									<button onclick="actionSearch();">
-										<span class="blind">검색</span>
-										<span class="icon-search"></span>
-									</button>
 								</div>
 							</div>
 						</div>
@@ -60,16 +62,16 @@
 							</div>
 						</div>
 					</div>
-					<div class="content">
+					<div class="content main">
 						<div class="wrapper">
-							<div class="banner big mobile">
+							<div class="banner big mobile-layout">
 								<div class="slide">
 									<a href="javascript:void(0)">
 										<img src="./images/main_banner_m.jpg">
 									</a>
 								</div>
 							</div>
-							<div class="banner big desktop">
+							<div class="banner big desktop-layout">
 								<div class="slide">
 									<a href="javascript:void(0)">
 										<img src="./images/main_banner_pc.jpg">
@@ -101,13 +103,14 @@
 	while ($data = mysqli_fetch_array($result))
 	{
 		$yt_flag 	= explode("v=",$data["video_link"]);	
-?>
+?>									
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="javascript:void(0)">
 												<div class="thum">
-													<img src="https://img.youtube.com/vi/<?=$yt_flag[1]?>/mqdefault.jpg">
-													<!-- <span class="total-time">0:34</span> -->
+													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
+													<!-- <img src="./images/grid_sample.jpg"> -->
+													<span class="total-time">0:34</span>
 												</div>
 												<figcaption>
 													<p>
@@ -192,6 +195,173 @@
 											</a>
 										</figure>
 									</div>
+									<div class="d-col-3 m-col-1 t-col-2">
+										<figure>
+											<a href="javascript:void(0)">
+												<div class="thum">
+													<img src="./images/grid_sample.jpg">
+													<span class="total-time">0:34</span>
+												</div>
+												<figcaption>
+													<p>
+														<span class="brand-name">
+															[Marieclairekorea]
+														</span>
+														<span class="desc">
+															데님 팬츠, 어떻게 입을까.
+														</span>
+													</p>
+													<span class="publisher">
+														마리끌레르
+													</span>
+													<div class="other">
+														<div class="play">
+															<span>▶</span>
+															<span>1,002</span>
+														</div>
+														<div class="like">
+															<span>♥</span>
+															<span>50</span>
+														</div>
+													</div>
+												</figcaption>
+											</a>
+										</figure>
+									</div>
+									<div class="d-col-3 m-col-1 t-col-2">
+										<figure>
+											<a href="javascript:void(0)">
+												<div class="thum">
+													<img src="./images/grid_sample.jpg">
+													<span class="total-time">0:34</span>
+												</div>
+												<figcaption>
+													<p>
+														<span class="brand-name">
+															[Marieclairekorea]
+														</span>
+														<span class="desc">
+															데님 팬츠, 어떻게 입을까.
+														</span>
+													</p>
+													<span class="publisher">
+														마리끌레르
+													</span>
+													<div class="other">
+														<div class="play">
+															<span>▶</span>
+															<span>1,002</span>
+														</div>
+														<div class="like">
+															<span>♥</span>
+															<span>50</span>
+														</div>
+													</div>
+												</figcaption>
+											</a>
+										</figure>
+									</div>
+									<div class="d-col-3 m-col-1 t-col-2">
+										<figure>
+											<a href="javascript:void(0)">
+												<div class="thum">
+													<img src="./images/grid_sample.jpg">
+													<span class="total-time">0:34</span>
+												</div>
+												<figcaption>
+													<p>
+														<span class="brand-name">
+															[Marieclairekorea]
+														</span>
+														<span class="desc">
+															데님 팬츠, 어떻게 입을까.
+														</span>
+													</p>
+													<span class="publisher">
+														마리끌레르
+													</span>
+													<div class="other">
+														<div class="play">
+															<span>▶</span>
+															<span>1,002</span>
+														</div>
+														<div class="like">
+															<span>♥</span>
+															<span>50</span>
+														</div>
+													</div>
+												</figcaption>
+											</a>
+										</figure>
+									</div>
+									<div class="d-col-3 m-col-1 t-col-2">
+										<figure>
+											<a href="javascript:void(0)">
+												<div class="thum">
+													<img src="./images/grid_sample.jpg">
+													<span class="total-time">0:34</span>
+												</div>
+												<figcaption>
+													<p>
+														<span class="brand-name">
+															[Marieclairekorea]
+														</span>
+														<span class="desc">
+															데님 팬츠, 어떻게 입을까.
+														</span>
+													</p>
+													<span class="publisher">
+														마리끌레르
+													</span>
+													<div class="other">
+														<div class="play">
+															<span>▶</span>
+															<span>1,002</span>
+														</div>
+														<div class="like">
+															<span>♥</span>
+															<span>50</span>
+														</div>
+													</div>
+												</figcaption>
+											</a>
+										</figure>
+									</div>
+									<div class="d-col-3 m-col-1 t-col-2">
+										<figure>
+											<a href="javascript:void(0)">
+												<div class="thum">
+													<img src="./images/grid_sample.jpg">
+													<span class="total-time">0:34</span>
+												</div>
+												<figcaption>
+													<p>
+														<span class="brand-name">
+															[Marieclairekorea]
+														</span>
+														<span class="desc">
+															데님 팬츠, 어떻게 입을까.
+														</span>
+													</p>
+													<span class="publisher">
+														마리끌레르
+													</span>
+													<div class="other">
+														<div class="play">
+															<span>▶</span>
+															<span>1,002</span>
+														</div>
+														<div class="like">
+															<span>♥</span>
+															<span>50</span>
+														</div>
+													</div>
+												</figcaption>
+											</a>
+										</figure>
+									</div>
+								</div>
+							</div>
 							<div class="more-cnt">
 								<a href="javascript:void(0)">
 									<span class="blind">more</span>
@@ -199,9 +369,19 @@
 							</div>
 						</div>
 					</div>
-<?
-	include_once "./footer.php";
-?>
+					<div id="footer">
+						<div class="inner clearfix">
+							<div class="logo">
+								<img src="./images/footer_logo.png" alt="VVV">
+							</div>
+							<div class="copyright">
+								<!-- <img src="./images/copyright.png" alt="COPYRIGHT 2017 VALUABLE VIRAL VIDEO. ALL RIGHTS RESERVED"> -->
+								<span class="blind">
+									COPYRIGHT 2017 VALUABLE VIRAL VIDEO. ALL RIGHTS RESERVED
+								</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

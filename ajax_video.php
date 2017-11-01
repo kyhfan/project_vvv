@@ -24,8 +24,9 @@
 										<figure>
 											<a href="javascript:void(0)">
 												<div class="thum">
-													<img src="https://img.youtube.com/vi/<?=$yt_flag[1]?>/0.jpg">
-													<!-- <span class="total-time">0:34</span> -->
+													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
+													<!-- <img src="./images/grid_sample.jpg"> -->
+													<span class="total-time">0:34</span>
 												</div>
 												<figcaption>
 													<p>
