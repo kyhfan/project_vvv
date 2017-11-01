@@ -80,8 +80,6 @@ button {
 	background-repeat: no-repeat;
 	padding-top: 54.6%;
 }
-
-
 .container {
 	padding: 0;
 }
@@ -504,14 +502,6 @@ button {
 /* 992px 이상 - 데스크탑 */
 /*@media all and (min-width: 992px)*/
 @media all and (min-width: 768px) {
-
-	.thum .thumnail-img {
-		background-position: center center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		padding-top: 54.6%;
-	}
-
 	.scrolled #header {
 		position: fixed;
 		top: 0;
