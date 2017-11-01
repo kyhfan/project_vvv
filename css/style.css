@@ -399,30 +399,31 @@ button {
 	margin: 0 auto;
 	text-align: center;
 }
-.member .wrapper .log-in {
+.member .wrapper .text {
 	padding-top: 46.5px;
 	letter-spacing: 1px;
 }
-.member .wrapper .log-in .text_01 {
+.member .wrapper .text .text_01 {
 	font-size: 21px;
 	font-weight: 900;
 }
-.member .wrapper .log-in .text_02 {
+.member .wrapper .text .text_02 {
 	font-size: 12px;
 }
-.content_ys {
+.member .login-box {
 	padding-top: 35px;
 }
-.member .link_01 {
-	width: 83%;
-	height: 12.1%;
-	margin: 29px auto 16px auto;
+.member .login-box .wrap-buttons {
+	margin: 26px 0;
 }
-.member .link_02 {
+.member .wrap-buttons .button {
 	width: 83%;
-	height: 12.1%;
-	margin: 0 auto 29px auto;
+	margin: 0 auto 16px;
 }
+.member .wrap-buttons .button:last-child {
+	margin-bottom: 0;
+}
+
 .line_ys {
 	width: 83%;
 }
@@ -710,15 +711,15 @@ button {
 	}
 	/* my_vvv */
 	/* member */
-	.member .wrapper .log-in {
+	.member .wrapper .text {
 		padding-top: 46.5px;
 		letter-spacing: 1px;
 	}
-	.member .wrapper .log-in .text_01 {
+	.member .wrapper .text .text_01 {
 		font-size: 32px;
 		font-weight: 900;
 	}
-	.member .wrapper .log-in .text_02 {
+	.member .wrapper .text .text_02 {
 		font-size: 20px;
 		padding-top: 10px;
 	}
