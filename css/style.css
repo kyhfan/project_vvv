@@ -20,7 +20,8 @@ a:focus {
 }
 img {
 	display: block;
-	width: 100%;
+	/*width: 100%;*/
+	max-width: 100%;
 }
 p {
 	margin: 0;
@@ -29,8 +30,8 @@ input[type="text"],
 input[type="tel"] {
 	background: transparent;
 	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	border: 0;
 	padding: 0;
 	width: 100%;
@@ -38,8 +39,8 @@ input[type="tel"] {
 button {
 	background: transparent;
 	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	border: 0;
 	padding: 0;
 }
@@ -73,6 +74,14 @@ button {
 }
 
 /* mobile first */
+.thum .thumnail-img {
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 54.6%;
+}
+
+
 .container {
 	padding: 0;
 }
@@ -139,16 +148,16 @@ button {
 #header .inner .nav ul li a.active span::after {
 	width: 100%;
 }
-#header .inner .nav .search-desktop {
+#header .inner .nav .desktop-layout {
 	display: none;
 }
-#header .inner .nav .search-mobile {
+#header .inner .nav .mobile-layout {
 	position: absolute;
 	top: 0;
 	right: -4px;
 	margin-top: 3%;
 }
-#header .inner .nav .search-mobile button .icon-search {
+#header .inner .nav .mobile-layout button .icon-search {
 	display: block;
 	background: url(../images/search_mobile.png) center center / cover no-repeat;
 	width: 20px;
@@ -232,12 +241,6 @@ button {
 	height: 5px;
 	vertical-align: middle;
 	margin-right: 2px;
-}
-.banner.mobile {
-	display: block;
-}
-.banner.desktop {
-	display: none;
 }
 .main .grid {
 	width: 83.4%;
@@ -393,6 +396,43 @@ button {
 	font-weight: 700;
 }
 /* my_vvv */
+/* member */
+.member .wrapper {
+	margin: 0 auto;
+	text-align: center;
+}
+.member .wrapper .log-in {
+	padding-top: 46.5px;
+	letter-spacing: 1px;
+}
+.member .wrapper .log-in .text_01 {
+	font-size: 21px;
+	font-weight: 900;
+}
+.member .wrapper .log-in .text_02 {
+	font-size: 12px;
+}
+.content_ys {
+	padding-top: 35px;
+}
+.member .link_01 {
+	width: 83%;
+	height: 12.1%;
+	margin: 29px auto 16px auto;
+}
+.member .link_02 {
+	width: 83%;
+	height: 12.1%;
+	margin: 0 auto 29px auto;
+}
+.line_ys {
+	width: 83%;
+}
+
+.desktop-layout {
+	display: none;
+}
+/* member */
 
 /* mobile first */
 
@@ -424,7 +464,7 @@ button {
 /* 768px 이상 - 태블릿 */
 @media (min-width: 768px) {
 	.container {
-	    width: 100%;
+		width: 100%;
 	}
 }
 
@@ -464,6 +504,14 @@ button {
 /* 992px 이상 - 데스크탑 */
 /*@media all and (min-width: 992px)*/
 @media all and (min-width: 768px) {
+
+	.thum .thumnail-img {
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding-top: 54.6%;
+	}
+
 	.scrolled #header {
 		position: fixed;
 		top: 0;
@@ -473,12 +521,12 @@ button {
 		padding: 0;
 		max-width: 100%;
 	}
-	.layout-desktop {
+	.container > .desktop-layout.big {
 		/*position: absolute;*/
 		/*top: 0;
 		left: 0;
 		right: 0;*/
-		height: 365px;
+		height: 341px;
 		background: #f2f2f2;
 		z-index: 1;
 	}
@@ -487,8 +535,8 @@ button {
 		position: absolute;
 		z-index: 999;
 		background: #f2f2f2;
-		/*top: 0;*/
-		top: 24px;
+		top: 0;
+		/*top: 24px;*/
 		left: 0;
 		right: 0;
 		width: 100%;
@@ -507,7 +555,7 @@ button {
 		width: auto;
 	}
 	#header .inner .nav {
-		margin-top: 23px;
+		margin-top: 20px;
 		position: relative;
 	}
 	#header .inner .nav ul {
@@ -521,31 +569,31 @@ button {
 		font-size: 26px;
 		font-weight: 900;
 	}
-	#header .inner .nav .search-mobile {
+	#header .inner .nav .mobile-layout {
 		display: none;
 	}
-	#header .inner .nav .search-desktop {
+	#header .inner .nav .desktop-layout {
 		display: block;
 		width: 237px;
 		position: absolute;
 		top: -6px;
 		right: 0;
 	}
-	#header .inner .nav .search-desktop .input-box {
+	#header .inner .nav .desktop-layout .input-box {
 		border-bottom: 1px solid #000000;
 	}
-	#header .inner .nav .search-desktop .input-box input[type="text"] {
+	#header .inner .nav .desktop-layout .input-box input[type="text"] {
 		color: #000000;
 		font-size: 21px;
 		padding: 10px 33px 10px 6px;
 		line-height: 0;
 	}
-	#header .inner .nav .search-desktop .input-box button {
+	#header .inner .nav .desktop-layout .input-box button {
 		position: absolute;
 		top: 6px;
 		right: 0;
 	}
-	#header .inner .nav .search-desktop .input-box button .icon-search {
+	#header .inner .nav .desktop-layout .input-box button .icon-search {
 		display: block;
 		background: url(../images/search_desktop.png) center center / cover no-repeat;
 		width: 31px;
@@ -593,12 +641,12 @@ button {
 		vertical-align: middle;
 		margin-right: 2px;
 	}
-	.banner.desktop {
+	.banner.desktop-layout {
 		display: block;
 		position: absolute;
 		top: -133px;
 	}
-	.banner.mobile {
+	.banner.mobile-layout {
 		display: none;
 	}
 	.main .grid {
@@ -671,7 +719,41 @@ button {
 		font-weight: 700;
 	}
 	/* my_vvv */
+	/* member */
+	.member .wrapper .log-in {
+		padding-top: 46.5px;
+		letter-spacing: 1px;
+	}
+	.member .wrapper .log-in .text_01 {
+		font-size: 32px;
+		font-weight: 900;
+	}
+	.member .wrapper .log-in .text_02 {
+		font-size: 20px;
+		padding-top: 10px;
+	}
+	.member .login-box {
+		padding-top: 35px;
+	}
+	.member .login-box .wrap-buttons {
+		padding: 50px 0;
+	}
+	.member .login-box .wrap-buttons .button {
+		width: 522px;
+		margin: 0 auto 10px;
+	}
+	.member .login-box .wrap-buttons .button:last-child {
+		margin-bottom: 0;
+	}
+	.line_ys {
+		width: 100%;
+	}
+	/* member */
 
+	#footer .inner {
+		width: auto;
+		max-width: 1040px;
+	}
 	#footer .inner .logo {
 		width: 76px;
 		margin-bottom: 0;
@@ -683,6 +765,14 @@ button {
 		height: 10px;
 		margin-top: 13px;
 	}
+
+	.mobile-layout {
+		display: none;
+	}
+	.desktop-layout {
+		display: block;
+	}
 }
+
 /* 992px 이상 - 데스크탑 */
 /* media querys branch point */
