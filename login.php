@@ -31,7 +31,7 @@
 										</a>
 									</div>
 									<div class="button">
-										<a href="#">
+										<a href="#" id="fblogin">
 											<img src="./images/facebook.jpg" alt="페이스북 로그인" class="mobile-layout">
 											<img src="./images/facebook_desktop.jpg" alt="페이스북 로그인" class="desktop-layout">
 										</a>
@@ -132,7 +132,7 @@
 		}(document, 'script', 'facebook-jssdk'));
 
 		//add event listener to login button
-		document.getElementById('loginBtn').addEventListener('click', function() {
+		document.getElementById('fblogin').addEventListener('click', function() {
 			//do the login
 			FB.login(function(response) {
 				if (response.authResponse) {
