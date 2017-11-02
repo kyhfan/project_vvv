@@ -151,6 +151,7 @@
                             "mb_thumbnail_img"	: res.properties.thumbnail_image
                         },
                         success: function(response){
+                            console.log(response);
                             if (response.match("Y") == "Y")
                             {
                                 location.href	= "index.php";
