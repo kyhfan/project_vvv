@@ -13,7 +13,7 @@
 	if (!$_SESSION['ss_vvv_email'])
 	{
 ?>
-											<a href="javascript:void(0)">
+											<a href="login.php">
 												<span>LOGIN</span>
                                             </a>
 <?
@@ -27,7 +27,7 @@
 ?>                                    
 										</li>
 										<li>
-											<a href="javascript:void(0)">
+											<a href="my_vvv.php">
 												<span>MY VVV</span>
 												<!-- <span></span> -->
 											</a>
