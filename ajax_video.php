@@ -15,14 +15,20 @@
 	$s_page				= $video_pg;
 
 	if ($search_keyword != "")
-		$where 	= " AND video_company like '%".$search_keyword."%'";
+		$where 	= " AND (video_company like '%".$search_keyword."%' OR video_title like '%".$search_keyword."%' OR video_desc like '%".$search_keyword."%')";
 	else
 		$where	= "";
 
-    $query			= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$where." ".$order_by." LIMIT ".$s_page.", ".$view_pg."";
+	// 전체 상품 갯수
+	$all_query				= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$where."";
+	$all_result				= mysqli_query($my_db, $all_query);
+	$all_video_num			= mysqli_num_rows($all_result);
+ 	$all_page				= ceil($all_video_num / $view_pg);
+
+	$query			= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$where." ".$order_by." LIMIT ".$s_page.", ".$view_pg."";
 	$result			= mysqli_query($my_db, $query);
-	$video_count	= mysqli_num_rows($result);
-	echo $video_count."||";
+	// $video_count	= mysqli_num_rows($result);
+	echo $all_video_num."||";
 
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
@@ -65,4 +71,5 @@
 									</div>
 <?
 	}
+	echo "||".$all_page;
 ?>									

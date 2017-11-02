@@ -1,4 +1,4 @@
-<div class="search-result">
+                    <div class="search-result">
 						<div class="wrapper">
 							<div class="rs-text">
 								<p>
@@ -43,8 +43,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="more-cnt">
-								<a href="javascript:void(0)">
+							<div class="more-cnt" id="search_more">
+								<a href="javascript:void(0)" onclick="more_search_video()">
 									<span class="blind">more</span>
 								</a>
 							</div>
