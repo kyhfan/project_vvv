@@ -35,10 +35,10 @@
 									</ul>
 									<div class="desktop-layout">
 										<div class="input-box">
-											<input type="text" placeholder="Search" onKeyUp="search_video(this)">
+											<input type="text" placeholder="Search" id="search_txt" onKeyUp="search_video(this)">
 											<button>
 												<span class="blind">검색</span>
-												<span class="icon-search"></span>
+												<span class="icon-search" onclick="search_click(document.getElementById('search_txt').value)"></span>
 											</button>
 										</div>
 									</div>

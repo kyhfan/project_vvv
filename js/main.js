@@ -97,7 +97,7 @@
 		{
             video_pg 	        = 0;
             current_page        = 1;
-            
+
 			$.ajax({
 				type   : "POST",
 				async  : false,
@@ -124,6 +124,8 @@
 		{
 			if(window.event.keyCode == 13)
 			{
+                video_pg 	        = 0;
+                current_page        = 1;
 				// console.log(obj.value);
 				$(".content").hide();
 				$(".search-result").show();
@@ -156,6 +158,43 @@
 				});
 			}
 			
+		}
+
+		function search_click(obj)
+		{
+
+            video_pg 	        = 0;
+            current_page        = 1;
+            // console.log(obj.value);
+            $(".content").hide();
+            $(".search-result").show();
+            $("#search_keyword").html(obj);
+
+            $.ajax({
+                type   : "POST",
+                async  : false,
+                url    : "./ajax_video.php",
+                data:{
+                    "video_pg"				: video_pg,
+                    "total_video_num"		: total_video_num,
+                    "total_page"			: total_page,
+                    "search_keyword"		: obj,
+                    "sort_val"				: sort_val
+                },
+                success: function(response){
+                    res_arr	= response.split("||");
+                    total_page  = res_arr[2];
+                    console.log(current_page+"||"+total_page);
+                    
+                    if (current_page >= total_page)
+                        $("#search_more").hide();
+                    else
+                        $("#search_more").show();
+
+                    $("#search_count").html(res_arr[0]);
+                    $("#search_area").html(res_arr[1]);
+                }
+            });			
 		}
 
     // 카카오 로그인
