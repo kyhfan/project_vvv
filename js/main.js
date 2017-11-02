@@ -4,8 +4,6 @@
 		var video_pg 	= 0;
 		var total_video_num 	= $("#total_video_num").val();
 		var total_page 			= $("#total_page").val();
-
-        Kakao.init('ff013671b5f7b01d59770657a8787952');
         
 		$(window).on('scroll', function() {
 			var $headerHeight = document.getElementById('header').height || $header.height();
@@ -152,6 +150,7 @@
                         },
                         success: function(response){
                             console.log(response);
+                            return false;
                             if (response.match("Y") == "Y")
                             {
                                 location.href	= "index.php";
