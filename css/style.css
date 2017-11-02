@@ -90,13 +90,11 @@ button {
 	z-index: 9999;
 }
 #header > .inner {
-	/*padding: 32px 68px 32px 30px;*/
 	padding: 32px 8.6%;
 	background: #ffffff;
 }
 #header > .inner > .wrapper {
 	position: relative;
-	padding-right: 12.4%;
 }
 #header .inner .logo {
 	float: left;
@@ -104,9 +102,10 @@ button {
 	height: auto;
 }
 #header .inner .nav {
-	float: right;
-	/*margin-top: 10px;*/
-	margin-top: 3%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-right: 9.5%;
 }
 #header .inner .nav ul li {
 	float: left;
@@ -152,8 +151,8 @@ button {
 #header .inner .nav .mobile-layout {
 	position: absolute;
 	top: 0;
-	right: -4px;
-	margin-top: 3%;
+	right: 0;
+	/*margin-top: 3%;*/
 }
 #header .inner .nav .mobile-layout button .icon-search {
 	display: block;
@@ -371,11 +370,9 @@ button {
 	margin-bottom: 7px;
 }
 #footer .inner .copyright {
-	width: 176px;
-	height: 5px;
-	background: url(../images/copyright.png) center center / cover no-repeat;
+	font-size: 10px;
+	letter-spacing: -0.015em;
 }
-
 
 /* my_vvv */
 .myVVV > .wrapper > .rs-text {
@@ -546,15 +543,14 @@ button {
 		width: auto;
 	}
 	#header .inner .nav {
-		margin-top: 20px;
-		position: relative;
+		position: absolute;
 	}
 	#header .inner .nav ul {
 		float: left;
-		margin-right: 293px;
+		margin-right: 180px;
 	}
 	#header .inner .nav ul li a {
-		padding-right: 61px;
+		padding-right: 60px;
 	}
 	#header .inner .nav ul li a span {
 		font-size: 26px;
@@ -752,9 +748,8 @@ button {
 	}
 	#footer .inner .copyright {
 		float: right;
-		width: 352px;
-		height: 10px;
-		margin-top: 13px;
+		font-size: 14px;
+		margin-top: 14px;
 	}
 
 	.mobile-layout {

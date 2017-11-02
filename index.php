@@ -87,9 +87,9 @@
 									</div>
 <?
 	}
-?>					
-<input type="hidden" id="total_video_num" value="<?=$total_video_num?>">				
-<input type="hidden" id="total_page" value="<?=$total_page?>">				
+?>
+<input type="hidden" id="total_video_num" value="<?=$total_video_num?>">
+<input type="hidden" id="total_page" value="<?=$total_page?>">
 								</div>
 							</div>
 							<div class="more-cnt" id="main_more">
