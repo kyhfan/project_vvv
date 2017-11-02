@@ -133,7 +133,7 @@
             Kakao.API.request({
                 url: '/v1/user/me',
                 success: function(res) {
-                    console.log(JSON.stringify(res));
+                    // console.log(JSON.stringify(res));
                     $.ajax({
                         type   : "POST",
                         async  : false,
@@ -149,8 +149,6 @@
                             "mb_thumbnail_img"	: res.properties.thumbnail_image
                         },
                         success: function(response){
-                            console.log(response);
-                            return false;
                             if (response.match("Y") == "Y")
                             {
                                 location.href	= "index.php";
