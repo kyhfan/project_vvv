@@ -5,42 +5,44 @@
 		<div id="vvv" class="">
 			<div class="bg-layer main">
 				<div class="container">
-					<div class="layout-desktop"></div>
+					<div class="desktop-layout big"></div>
 					<div id="header">
 						<div class="inner clearfix">
-							<div class="logo">
-								<a href="javascript:void(0)">
-									<img src="./images/vvv_logo.png" alt="홈으로">
-								</a>
-							</div>
-							<div class="nav">
-								<ul class="clearfix">
-									<li>
-										<a href="javascript:void(0)">
-											<span>LOGIN</span>
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)">
-											<span>MY VVV</span>
-											<!-- <span></span> -->
-										</a>
-									</li>
-								</ul>
-								<div class="search-desktop">
-									<div class="input-box">
-										<input type="text" placeholder="Search" onKeyUp="search_video(this)" >
-										<button>
+							<div class="wrapper">
+								<div class="logo">
+									<a href="index.php">
+										<img src="./images/vvv_logo.png" alt="홈으로">
+									</a>
+								</div>
+								<div class="nav">
+									<ul class="clearfix">
+										<li>
+											<a href="javascript:void(0)">
+												<span>LOGIN</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<span>MY VVV</span>
+												<!-- <span></span> -->
+											</a>
+										</li>
+									</ul>
+									<div class="desktop-layout">
+										<div class="input-box">
+											<input type="text" placeholder="Search" onKeyUp="search_video(this)">
+											<button>
+												<span class="blind">검색</span>
+												<span class="icon-search"></span>
+											</button>
+										</div>
+									</div>
+									<div class="mobile-layout">
+										<button onclick="actionSearch();">
 											<span class="blind">검색</span>
 											<span class="icon-search"></span>
 										</button>
 									</div>
-								</div>
-								<div class="search-mobile">
-									<button onclick="actionSearch();">
-										<span class="blind">검색</span>
-										<span class="icon-search"></span>
-									</button>
 								</div>
 							</div>
 						</div>
@@ -60,16 +62,16 @@
 							</div>
 						</div>
 					</div>
-					<div class="content">
+					<div class="content main">
 						<div class="wrapper">
-							<div class="banner big mobile">
+							<div class="banner big mobile-layout">
 								<div class="slide">
 									<a href="javascript:void(0)">
 										<img src="./images/main_banner_m.jpg">
 									</a>
 								</div>
 							</div>
-							<div class="banner big desktop">
+							<div class="banner big desktop-layout">
 								<div class="slide">
 									<a href="javascript:void(0)">
 										<img src="./images/main_banner_pc.jpg">
@@ -85,7 +87,7 @@
 								</a>
 							</div>
 							<div class="grid">
-								<div class="row" id="search_area">
+								<div class="row" id="main_area">
 <?
 	$view_pg            = 6;
 	$s_page				= 0;
@@ -95,18 +97,19 @@
 	$total_video_num	= mysqli_num_rows($result);
  	$total_page			= ceil($total_video_num / $view_pg);
 
-	$query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' LIMIT ".$s_page.", ".$view_pg."";
+	$query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ORDER BY idx DESC LIMIT ".$s_page.", ".$view_pg."";
 	$result		= mysqli_query($my_db, $query);
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
 		$yt_flag 	= explode("v=",$data["video_link"]);	
-?>
+?>									
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="javascript:void(0)">
 												<div class="thum">
-													<img src="https://img.youtube.com/vi/<?=$yt_flag[1]?>/mqdefault.jpg">
+													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
+													<!-- <img src="./images/grid_sample.jpg"> -->
 													<!-- <span class="total-time">0:34</span> -->
 												</div>
 												<figcaption>
@@ -154,11 +157,11 @@
 							<div class="rs-text">
 								<p>
 									<span class="ellipse"></span>
-									"<span></span>" 에 대한 <span>1</span>개의 검색결과
+									"<span id="search_keyword"></span>" 에 대한 <span id="search_count"></span>개의 검색결과
 								</p>
 							</div>
 							<div class="grid">
-								<div class="row">
+								<div class="row" id="search_area">
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="javascript:void(0)">
@@ -192,6 +195,8 @@
 											</a>
 										</figure>
 									</div>
+								</div>
+							</div>
 							<div class="more-cnt">
 								<a href="javascript:void(0)">
 									<span class="blind">more</span>
@@ -225,7 +230,7 @@
 			} else {
 				$vvv.removeClass('scrolled');
 			}
-			console.log(currentScroll);
+			// console.log(currentScroll);
 		});
 
 		// mobile search action
@@ -254,11 +259,12 @@
 					"sort_val"				: sort_val
 				},
 				success: function(response){
+					res_arr	= response.split("||");
 					if (video_pg > <?=$total_page?>)
 						$("#main_more").hide();
 					else
 						$("#main_more").show();
-					$("#search_area").append(response);
+					$("#main_area").append(res_arr[1]);
 				}
 			});
 		}
@@ -289,11 +295,12 @@
 					"sort_val"				: val
 				},
 				success: function(response){
+					res_arr	= response.split("||");
 					if (video_pg > <?=$total_page?>)
 						$("#main_more").hide();
 					else
 						$("#main_more").show();
-					$("#search_area").html(response);
+					$("#main_area").html(res_arr[1]);
 				}
 			});
 			
@@ -303,8 +310,32 @@
 		{
 			if(window.event.keyCode == 13)
 			{
-				console.log(obj.value);
+				// console.log(obj.value);
+				$(".content").hide();
 				$(".search-result").show();
+				$("#search_keyword").html(obj.value);
+
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./ajax_video.php",
+					data:{
+						"video_pg"				: video_pg,
+						"total_video_num"		: total_video_num,
+						"total_page"			: total_page,
+						"search_keyword"		: obj.value,
+						"sort_val"				: sort_val
+					},
+					success: function(response){
+						res_arr	= response.split("||");
+						if (video_pg > total_page)
+							$("#main_more").hide();
+						else
+							$("#main_more").show();
+						$("#search_count").html(res_arr[0]);
+						$("#search_area").html(res_arr[1]);
+					}
+				});
 			}
 			
 		}

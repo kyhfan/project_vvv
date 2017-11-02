@@ -4,6 +4,7 @@
     $video_pg               = $_REQUEST["video_pg"];
     $total_video_num        = $_REQUEST["total_video_num"];
     $total_page             = $_REQUEST["total_page"];
+    $search_keyword         = $_REQUEST["search_keyword"];
     $sort_val               = $_REQUEST["sort_val"];
 
     if ($sort_val == "new")
@@ -13,8 +14,16 @@
 	$view_pg            = 6;
 	$s_page				= $video_pg;
 
-    $query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$order_by." LIMIT ".$s_page.", ".$view_pg."";
-	$result		= mysqli_query($my_db, $query);
+	if ($search_keyword != "")
+		$where 	= " AND video_company like '%".$search_keyword."%'";
+	else
+		$where	= "";
+
+    $query			= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$where." ".$order_by." LIMIT ".$s_page.", ".$view_pg."";
+	$result			= mysqli_query($my_db, $query);
+	$video_count	= mysqli_num_rows($result);
+	echo $video_count."||";
+
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
@@ -26,7 +35,7 @@
 												<div class="thum">
 													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
 													<!-- <img src="./images/grid_sample.jpg"> -->
-													<span class="total-time">0:34</span>
+													<!-- <span class="total-time">0:34</span> -->
 												</div>
 												<figcaption>
 													<p>
