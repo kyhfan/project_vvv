@@ -9,39 +9,41 @@
 					<div class="layout-desktop"></div>
 					<div id="header">
 						<div class="inner clearfix">
-							<div class="logo">
-								<a href="javascript:void(0)">
-									<img src="./images/vvv_logo.png" alt="홈으로">
-								</a>
-							</div>
-							<div class="nav">
-								<ul class="clearfix">
-									<li>
-										<a href="javascript:void(0)">
-											<span>LOGIN</span>
-										</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)">
-											<span>MY VVV</span>
-											<!-- <span></span> -->
-										</a>
-									</li>
-								</ul>
-								<div class="search-desktop">
-									<div class="input-box">
-										<input type="text" placeholder="Search" onKeyUp="search_video(this)" >
-										<button>
+							<div class="wrapper">
+								<div class="logo">
+									<a href="javascript:void(0)">
+										<img src="./images/vvv_logo.png" alt="홈으로">
+									</a>
+								</div>
+								<div class="nav">
+									<ul class="clearfix">
+										<li>
+											<a href="javascript:void(0)">
+												<span>LOGIN</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<span>MY VVV</span>
+												<!-- <span></span> -->
+											</a>
+										</li>
+									</ul>
+									<div class="search-desktop">
+										<div class="input-box">
+											<input type="text" placeholder="Search" onKeyUp="search_video(this)" >
+											<button>
+												<span class="blind">검색</span>
+												<span class="icon-search"></span>
+											</button>
+										</div>
+									</div>
+									<div class="search-mobile">
+										<button onclick="actionSearch();">
 											<span class="blind">검색</span>
 											<span class="icon-search"></span>
 										</button>
 									</div>
-								</div>
-								<div class="search-mobile">
-									<button onclick="actionSearch();">
-										<span class="blind">검색</span>
-										<span class="icon-search"></span>
-									</button>
 								</div>
 							</div>
 						</div>
@@ -101,7 +103,7 @@
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
-		$yt_flag 	= explode("v=",$data["video_link"]);	
+		$yt_flag 	= explode("v=",$data["video_link"]);
 ?>
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
@@ -138,9 +140,9 @@
 									</div>
 <?
 	}
-?>					
-<input type="hidden" id="total_video_num" value="<?=$total_video_num?>">				
-<input type="hidden" id="total_page" value="<?=$total_page?>">				
+?>
+<input type="hidden" id="total_video_num" value="<?=$total_video_num?>">
+<input type="hidden" id="total_page" value="<?=$total_page?>">
 								</div>
 							</div>
 							<div class="more-cnt" id="main_more">
@@ -275,7 +277,7 @@
 			}
 
 		});
-		
+
 		function sort_area(val)
 		{
 			video_pg 	= 0;
@@ -297,7 +299,7 @@
 					$("#search_area").html(response);
 				}
 			});
-			
+
 		}
 
 		function search_video(obj)
@@ -307,7 +309,7 @@
 				console.log(obj.value);
 				$(".search-result").show();
 			}
-			
+
 		}
 		</script>
 	</body>
