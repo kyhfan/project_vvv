@@ -1,6 +1,6 @@
-					<div id="header">
-						<div class="inner clearfix">
-							<div class="wrapper">
+<div id="header">
+						<div class="inner">
+							<div class="wrapper clearfix">
 								<div class="logo">
 									<a href="index.php">
 										<img src="./images/vvv_logo.png" alt="홈으로">
@@ -9,9 +9,22 @@
 								<div class="nav">
 									<ul class="clearfix">
 										<li>
-											<a href="login.php">
+<?
+	if (!$_SESSION['ss_vvv_email'])
+	{
+?>
+											<a href="javascript:void(0)">
 												<span>LOGIN</span>
-											</a>
+                                            </a>
+<?
+    }else{
+?>        
+											<a href="logout.php">
+												<span>LOGOUT</span>
+                                            </a>
+<?
+    }
+?>                                    
 										</li>
 										<li>
 											<a href="javascript:void(0)">
