@@ -4,6 +4,7 @@
     $video_pg               = $_REQUEST["video_pg"];
     $total_video_num        = $_REQUEST["total_video_num"];
     $total_page             = $_REQUEST["total_page"];
+    $search_keyword         = $_REQUEST["search_keyword"];
     $sort_val               = $_REQUEST["sort_val"];
 
     if ($sort_val == "new")
@@ -13,8 +14,22 @@
 	$view_pg            = 6;
 	$s_page				= $video_pg;
 
-    $query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$order_by." LIMIT ".$s_page.", ".$view_pg."";
-	$result		= mysqli_query($my_db, $query);
+	if ($search_keyword != "")
+		$where 	= " AND (video_company like '%".$search_keyword."%' OR video_title like '%".$search_keyword."%' OR video_desc like '%".$search_keyword."%')";
+	else
+		$where	= "";
+
+	// 전체 상품 갯수
+	$all_query				= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$where."";
+	$all_result				= mysqli_query($my_db, $all_query);
+	$all_video_num			= mysqli_num_rows($all_result);
+ 	$all_page				= ceil($all_video_num / $view_pg);
+
+	$query			= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y' ".$where." ".$order_by." LIMIT ".$s_page.", ".$view_pg."";
+	$result			= mysqli_query($my_db, $query);
+	// $video_count	= mysqli_num_rows($result);
+	echo $all_video_num."||";
+
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
@@ -24,7 +39,8 @@
 										<figure>
 											<a href="javascript:void(0)">
 												<div class="thum">
-													<img src="https://img.youtube.com/vi/<?=$yt_flag[1]?>/0.jpg">
+													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
+													<!-- <img src="./images/grid_sample.jpg"> -->
 													<!-- <span class="total-time">0:34</span> -->
 												</div>
 												<figcaption>
@@ -55,4 +71,5 @@
 									</div>
 <?
 	}
+	echo "||".$all_page;
 ?>									
