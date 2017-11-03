@@ -1,5 +1,5 @@
 <?
-	include_once "./header.php";
+	include_once "./header_video.php";
 
 	$idx	= $_REQUEST["idx"];
 	// 영상정보(idx)
