@@ -41,34 +41,34 @@
 <?
 	while ($data = mysqli_fetch_array($my_result))
 	{
+		$yt_flag 	= explode("v=",$data["video_link"]);	
 ?>									
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
-											<a href="javascript:void(0)">
+											<a href="video_detail.php?idx=<?=$data["idx"]?>">
 												<div class="thum">
-													<img src="./images/grid_sample.jpg">
-													<span class="total-time">0:34</span>
+													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
 												</div>
 												<figcaption>
 													<p>
 														<span class="brand-name">
-															[Marieclairekorea]
+															[<?=$data["video_company"]?>]
 														</span>
-														<span class="desc">
+														<!-- <span class="desc">
 															데님 팬츠, 어떻게 입을까.
-														</span>
+														</span> -->
 													</p>
 													<span class="publisher">
-														마리끌레르
+														<?=mb_strimwidth($data["video_title"],0,40, '...', 'utf-8')?>
 													</span>
 													<div class="other">
 														<div class="play">
 															<span>▶</span>
-															<span>1,002</span>
+															<span><?=number_format($data["play_count"])?></span>
 														</div>
 														<div class="like">
 															<span>♥</span>
-															<span>50</span>
+															<span><?=number_format($data["like_count"])?></span>
 														</div>
 													</div>
 												</figcaption>
