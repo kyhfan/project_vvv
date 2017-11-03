@@ -111,6 +111,18 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/TweenMax.js"></script>
+<?
+	if ($gubun == "MOBILE")
+	{
+?>		
+		<script type="text/javascript" src="./js/m_main.js"></script>
+<?
+	}else{
+?>		
+		<script type="text/javascript" src="./js/main.js"></script>
+<?
+	}
+?>
 		<script type="text/javascript">
 		var $vvv = $('#vvv');
 		var $header = $('#header');
