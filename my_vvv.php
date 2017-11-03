@@ -87,7 +87,7 @@
 								</div>
 							</div>
 <?
-	if ($total_page == 1)
+	if ($total_page > 1)
 	{
 ?>							
 							<div class="more-cnt" id="main_more">
