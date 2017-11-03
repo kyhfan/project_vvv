@@ -17,11 +17,6 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="<?=$data["video_title"]?>">
-		<meta property="og:url" content="http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>" />
-		<meta property="og:image" content="https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg" />
-		<meta property="og:description" content="<?=$data["video_desc"]?>">
 		<title>VVV</title>
 		<!-- 폰트 -->
 		<!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"> -->
