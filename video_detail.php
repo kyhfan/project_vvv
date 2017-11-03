@@ -108,7 +108,7 @@
         if (media == "fb")
         {
     
-            var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.valuable-viral-video.com/index.php?media=fb?v=<?=$idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
+            var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.valuable-viral-video.com/video_detail.php?idx=<?=$idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
             $.ajax({
                 type   : "POST",
                 async  : false,
