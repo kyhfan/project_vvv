@@ -100,7 +100,7 @@
 				});
 			}			
 		}else if (event.data == 2){
-			var play_flag = 1;
+			play_flag = 1;
 		}
     }
 	
