@@ -75,26 +75,32 @@
         });
 	}
 
+	var play_flag = 0;
     function onPlayerStateChange(event) {
 		console.log(event);
-		if (event.data == 3)
+		if (event.data == 1)
 		{
-            $.ajax({
-                type   : "POST",
-                async  : false,
-                url    : "./main_exec.php",
-                data:{
-                    "exec"				    : "view_video",
-                    "v_idx"		            : "<?=$idx?>"
-                },
-                success: function(response){
-                    console.log(response);
-                    if (response.match("Y") == "Y")
-                    {
-                        $("#view_count").html(Number($("#view_count").html()) + 1);
-                    }
-                }
-            });			
+			if (play_flag == 0)
+			{
+				$.ajax({
+					type   : "POST",
+					async  : false,
+					url    : "./main_exec.php",
+					data:{
+						"exec"				    : "view_video",
+						"v_idx"		            : "<?=$idx?>"
+					},
+					success: function(response){
+						console.log(response);
+						if (response.match("Y") == "Y")
+						{
+							$("#view_count").html(Number($("#view_count").html()) + 1);
+						}
+					}
+				});
+			}			
+		}else if (event.data == 2){
+			var play_flag = 1;
 		}
     }
 	
