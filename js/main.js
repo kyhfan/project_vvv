@@ -221,12 +221,6 @@
             });			
         }
 
-        // 유튜브 영상 클릭
-		$(document).on("click", "#ytplayer", function(){
-            alert("111");
-        });
-
-
     // 카카오 로그인
     function loginWithKakao()
     {
