@@ -7,6 +7,9 @@
 	$query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE idx=".$idx;
 	$result		= mysqli_query($my_db, $query);
 	$data		= mysqli_fetch_array($result);
+
+	$yt_flag 	= explode("v=",$data["video_link"]);		
+	
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -17,7 +20,7 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="<?=$data["video_title"]?>">
 		<meta property="og:url" content="http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>" />
-		<meta property="og:image" content="https://img.youtube.com/vi/<?=$idx?>/hqdefault.jpg" />
+		<meta property="og:image" content="https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg" />
 		<meta property="og:description" content="<?=$data["video_desc"]?>">
 		<title>VVV</title>
 		<!-- 폰트 -->

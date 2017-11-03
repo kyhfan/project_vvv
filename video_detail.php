@@ -1,7 +1,5 @@
 <?
 	include_once "./header_video.php";
-	
-	$yt_flag 	= explode("v=",$data["video_link"]);		
 ?>
 	<body>
 		<div id="vvv" class="">
