@@ -89,14 +89,10 @@
                 },
                 success: function(response){
                     console.log(response);
-                    // if (response.match("Y") == "Y")
-                    // {
-                    //     $("#like_img").html("liked");
-                    //     $("#like_count").html(Number($("#like_count").html()) + 1);
-                    // }else{
-                    //     $("#like_img").html("like");
-                    //     $("#like_count").html($("#like_count").html() - 1);
-                    // }
+                    if (response.match("Y") == "Y")
+                    {
+                        $("#view_count").html(Number($("#view_count").html()) + 1);
+                    }
                 }
             });			
 		}
