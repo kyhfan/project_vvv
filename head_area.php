@@ -55,7 +55,7 @@
 							<div class="wrapper clearfix">
 								<div class="input-box">
 									<div class="inner">
-										<input type="text" placeholder="Search">
+										<input type="text" placeholder="Search" id="search_m_txt" onKeyUp="search_video(this)">
 									</div>
 								</div>
 								<div class="close-box">
