@@ -105,7 +105,23 @@
 			}
 
 			echo $flag;
+		break;
 
+		case "view_video" :
+			$v_idx			= $_REQUEST["v_idx"];
+
+			$query		= "INSERT INTO ".$_gl['view_info_table']."(v_idx, mb_email, view_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".date("Y-m-d H:i:s")."')";
+			$result		= mysqli_query($my_db, $query);
+
+			$query2		= "UPDATE ".$_gl['video_info_table']." SET play_count=play_count+1 WHERE idx='".$v_idx."'";
+			$result2	= mysqli_query($my_db, $query2);
+
+			if ($result)
+				$flag	= "Y";
+			else
+				$flag	= "N";
+
+			echo $flag;
 		break;
 	}
 ?>

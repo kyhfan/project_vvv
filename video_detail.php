@@ -19,9 +19,12 @@
 	include_once "./head_area.php";
 ?>				
 					<div class="content member">
-						<iframe allowfullscreen="1" src="https://www.youtube.com/embed/<?=$yt_flag[1]?>" frameborder="0" id="ytplayer" class="ytplayer" width="200" height="200"></iframe>
+						<div id="video_area">
+
+						</div>
+						<!-- <iframe allowfullscreen="1" src="https://www.youtube.com/embed/<?=$yt_flag[1]?>??version=3&enablejsapi=1" frameborder="0" id="ytplayer" class="ytplayer" width="200" height="200"></iframe> -->
 						[<?=$data["video_company"]?>] <?=$data["video_title"]?><br />
-						▶<?=number_format($data["play_count"])?><br />
+						▶<span id="view_count"><?=number_format($data["play_count"])?></span><br />
 						♥<span id="like_count"><?=number_format($data["like_count"])?></span><br />
 						<a href="#">fb</a>
 						<a href="#">ks</a>
@@ -51,5 +54,54 @@
 <?
 	}
 ?>
+	<script type="text/javascript">
+	// 유튜브 api 재생 클릭시 이벤트 설정
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+		player = new YT.Player('video_area', {
+        	height: '360',
+        	width: '640',
+        	videoId: '<?=$yt_flag[1]?>',
+        	events: {
+            	// 'onReady': onPlayerReady,
+            	'onStateChange': onPlayerStateChange
+          	}
+        });
+	}
+
+    function onPlayerStateChange(event) {
+		console.log(event);
+		if (event == 3)
+		{
+            $.ajax({
+                type   : "POST",
+                async  : false,
+                url    : "./main_exec.php",
+                data:{
+                    "exec"				    : "view_video",
+                    "v_idx"		            : "<?=$idx?>"
+                },
+                success: function(response){
+                    console.log(response);
+                    // if (response.match("Y") == "Y")
+                    // {
+                    //     $("#like_img").html("liked");
+                    //     $("#like_count").html(Number($("#like_count").html()) + 1);
+                    // }else{
+                    //     $("#like_img").html("like");
+                    //     $("#like_count").html($("#like_count").html() - 1);
+                    // }
+                }
+            });			
+		}
+    }
+	
+	</script>
 	</body>
 </html>
