@@ -80,11 +80,14 @@
 									</div>
 <?
 	}
+	$total_page			= ceil($total_video_num / $view_pg);
 ?>									
+<input type="hidden" id="total_video_num" value="<?=$my_count?>">
+<input type="hidden" id="total_page" value="<?=$total_page?>">
 								</div>
 							</div>
-							<div class="more-cnt">
-								<a href="javascript:void(0)">
+							<div class="more-cnt" id="main_more">
+								<a href="javascript:void(0)" onclick="more_video()">
 									<span class="blind">more</span>
 								</a>
 							</div>
