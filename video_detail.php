@@ -22,7 +22,7 @@
 						<iframe allowfullscreen="1" src="https://www.youtube.com/embed/<?=$yt_flag[1]?>" frameborder="0" id="ytplayer" class="ytplayer" width="200" height="200"></iframe>
 						[<?=$data["video_company"]?>] <?=$data["video_title"]?><br />
 						▶<?=number_format($data["play_count"])?><br />
-						♥<?=number_format($data["like_count"])?><br />
+						♥<span id="like_count"><?=number_format($data["like_count"])?></span><br />
 						<a href="#">fb</a>
 						<a href="#">ks</a>
 						<a href="#">kt</a>

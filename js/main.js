@@ -210,9 +210,13 @@
                 success: function(response){
                     console.log(response);
                     if (response.match("Y") == "Y")
+                    {
                         $("#like_img").html("liked");
-                    else
+                        $("#like_count").html($("#like_count").html() + 1);
+                    }else{
                         $("#like_img").html("like");
+                        $("#like_count").html($("#like_count").html() - 1);
+                    }
                 }
             });			
         }
