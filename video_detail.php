@@ -1,14 +1,7 @@
 <?
 	include_once "./header_video.php";
-
-	$idx	= $_REQUEST["idx"];
-	// 영상정보(idx)
-	$query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE idx=".$idx;
-	$result		= mysqli_query($my_db, $query);
-	$data		= mysqli_fetch_array($result);
 	
-	$yt_flag 	= explode("v=",$data["video_link"]);	
-	
+	$yt_flag 	= explode("v=",$data["video_link"]);		
 ?>
 	<body>
 		<div id="vvv" class="">

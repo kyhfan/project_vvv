@@ -1,13 +1,12 @@
 <?
 	include_once "./config.php";
 
-	$v 		= $_REQUEST["v"];
-	if ($v != "")
-	{
-		$video_query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE idx='".$v."'";
-		$video_result		= mysqli_query($my_db, $video_query);
-		$video_data			= mysqli_fetch_array($video_result);
-	}
+	$idx	= $_REQUEST["idx"];
+
+	// 영상정보(idx)
+	$query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE idx=".$idx;
+	$result		= mysqli_query($my_db, $query);
+	$data		= mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -16,10 +15,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="<?=$video_data["video_title"]?>">
-		<meta property="og:url" content="http://valuable-viral-video.com/video_detail.php?idx=<?=$v?>" />
-		<meta property="og:image" content="https://img.youtube.com/vi/<?=$v?>/hqdefault.jpg" />
-		<meta property="og:description" content="<?=$video_data["video_desc"]?>">
+		<meta property="og:title" content="<?=$data["video_title"]?>">
+		<meta property="og:url" content="http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>" />
+		<meta property="og:image" content="https://img.youtube.com/vi/<?=$idx?>/hqdefault.jpg" />
+		<meta property="og:description" content="<?=$data["video_desc"]?>">
 		<title>VVV</title>
 		<!-- 폰트 -->
 		<!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"> -->
