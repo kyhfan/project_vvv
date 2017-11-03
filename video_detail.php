@@ -77,7 +77,7 @@
 
     function onPlayerStateChange(event) {
 		console.log(event);
-		if (event == 3)
+		if (event.data == 3)
 		{
             $.ajax({
                 type   : "POST",
