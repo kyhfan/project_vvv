@@ -41,6 +41,7 @@
 <?
 	while ($data = mysqli_fetch_array($my_result))
 	{
+		print_r($data);
 		$yt_flag 	= explode("v=",$data["video_link"]);	
 ?>									
 									<div class="d-col-3 m-col-1 t-col-2">
