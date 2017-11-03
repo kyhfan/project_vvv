@@ -91,10 +91,16 @@
 			{
 				$query		= "INSERT INTO ".$_gl['like_info_table']."(v_idx, mb_email, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','Y','".date("Y-m-d H:i:s")."')";
 				$result		= mysqli_query($my_db, $query);
+
+				$query2		= "UPDATE ".$_gl['video_info_table']." SET like_count=like_count+1 WHERE idx='".$v_idx."'";
+				$result2	= mysqli_query($my_db, $query2);
 				$flag	= "Y";
 			}else{
 				$query		= "UPDATE ".$_gl['like_info_table']." SET like_flag='N' WHERE idx='".$like_data["idx"]."'";
 				$result		= mysqli_query($my_db, $query);
+
+				$query2		= "UPDATE ".$_gl['video_info_table']." SET like_count=like_count-1 WHERE idx='".$v_idx."'";
+				$result2	= mysqli_query($my_db, $query2);
 				$flag	= "N";
 			}
 
