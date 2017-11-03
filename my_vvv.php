@@ -9,7 +9,7 @@
 		<div id="vvv" class="">
 			<div class="bg-layer main">
 				<div class="container">
-					<div class="desktop-layout"></div>
+					<div class="desktop-layout big"></div>
 <?
 	include_once "./head_area.php";
 ?>				
