@@ -10,7 +10,7 @@
 								<div class="row" id="search_area">
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
-											<a href="javascript:void(0)">
+											<a href="video_detail.php?idx=<?=$data["idx"]?>">
 												<div class="thum">
 													<img src="./images/grid_sample.jpg">
 													<span class="total-time">0:34</span>

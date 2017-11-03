@@ -57,7 +57,18 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/TweenMax.js"></script>
 		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>		
+<?
+	if ($gubun == "MOBILE")
+	{
+?>		
+		<script type="text/javascript" src="./js/m_main.js"></script>
+<?
+	}else{
+?>		
 		<script type="text/javascript" src="./js/main.js"></script>
+<?
+	}
+?>
 		<script type="text/javascript">
 		Kakao.init('ff013671b5f7b01d59770657a8787952');
 		

@@ -195,7 +195,27 @@
                     $("#search_area").html(res_arr[1]);
                 }
             });			
-		}
+        }
+        
+        function like_video(v_idx)
+        {
+            $.ajax({
+                type   : "POST",
+                async  : false,
+                url    : "./main_exec.php",
+                data:{
+                    "exec"				    : "like_video",
+                    "v_idx"		            : v_idx
+                },
+                success: function(response){
+                    console.log(response);
+                    if (response.match("Y") == "Y")
+                        $("#like_img").html("liked");
+                    else
+                        $("#like_img").html("like");
+                }
+            });			
+        }
 
     // 카카오 로그인
     function loginWithKakao()

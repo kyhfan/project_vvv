@@ -37,7 +37,7 @@
 ?>									
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
-											<a href="javascript:void(0)">
+											<a href="video_detail.php?idx=<?=$data["idx"]?>">
 												<div class="thum">
 													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
 													<!-- <img src="./images/grid_sample.jpg"> -->

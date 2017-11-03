@@ -68,7 +68,7 @@
 
 			// 회원 이메일, 이름 세션 생성
 			$_SESSION['ss_vvv_email']		= $mb_email;
-			$_SESSION['ss_vvv_name']		= $mb_kakao_name;
+			$_SESSION['ss_vvv_name']		= $mb_facebook_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
 			
 			if ($result)
@@ -77,6 +77,29 @@
 				$flag	= "N";
 
 			echo $flag;
+		break;
+
+		case "like_video" :
+			$v_idx			= $_REQUEST["v_idx"];
+
+			$like_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$v_idx."' AND like_flag='Y'";
+			$like_result	= mysqli_query($my_db, $like_query);
+			$like_count		= mysqli_num_rows($like_result);
+			$like_data		= mysqli_fetch_array($like_result);
+
+			if ($like_count == 0)
+			{
+				$query		= "INSERT INTO ".$_gl['like_info_table']."(v_idx, mb_email, like_flag, like_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','Y','".date("Y-m-d H:i:s")."')";
+				$result		= mysqli_query($my_db, $query);
+				$flag	= "Y";
+			}else{
+				$query		= "UPDATE ".$_gl['like_info_table']." SET like_flag='N' WHERE idx='".$like_data["idx"]."'";
+				$result		= mysqli_query($my_db, $query);
+				$flag	= "N";
+			}
+
+			echo $flag;
+
 		break;
 	}
 ?>
