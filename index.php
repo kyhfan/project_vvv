@@ -92,11 +92,18 @@
 <input type="hidden" id="total_page" value="<?=$total_page?>">
 								</div>
 							</div>
+<?
+	if ($view_pg == 1)
+	{
+?>							
 							<div class="more-cnt" id="main_more">
 								<a href="javascript:void(0)" onclick="more_video()">
 									<span class="blind">more</span>
 								</a>
 							</div>
+<?
+	}
+?>							
 						</div>
 					</div>
 <?
