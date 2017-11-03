@@ -4,6 +4,11 @@
 	if (!$_SESSION['ss_vvv_email'])
 		echo "<script>location.href='login.php';</script>";
 
+
+	$my_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND like_flag='Y'";
+	$my_result		= mysqli_query($my_db, $my_query);
+	$my_count		= mysqli_num_rows($my_result);
+
 ?>
 	<body>
 		<div id="vvv" class="">
@@ -18,21 +23,25 @@
 							<div class="rs-text">
 								<p>
 									<span class="ellipse"></span>
-									<span class="name">오준우</span>님 반갑습니다
+									<span class="name"><?=$_SESSION['ss_vvv_name']?></span>님 반갑습니다
 								</p>
 							</div>
 							<div class="sorting">
-								<a href="javascript:void(0)" class="active">
+								<!-- <a href="javascript:void(0)" class="active">
 									<span>UPLOAD</span>
 									<span class="count">(10)</span>
-								</a>
+								</a> -->
 								<a href="javascript:void(0)">
 									<span>LIKE</span>
-									<span class="count">(1)</span>
+									<span class="count">(<?=$my_count?>)</span>
 								</a>
 							</div>
 							<div class="grid">
 								<div class="row">
+<?
+	while ($data = mysqli_fetch_array($my_result))
+	{
+?>									
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="javascript:void(0)">
@@ -66,171 +75,9 @@
 											</a>
 										</figure>
 									</div>
-									<div class="d-col-3 m-col-1 t-col-2">
-										<figure>
-											<a href="javascript:void(0)">
-												<div class="thum">
-													<img src="./images/grid_sample.jpg">
-													<span class="total-time">0:34</span>
-												</div>
-												<figcaption>
-													<p>
-														<span class="brand-name">
-															[Marieclairekorea]
-														</span>
-														<span class="desc">
-															데님 팬츠, 어떻게 입을까.
-														</span>
-													</p>
-													<span class="publisher">
-														마리끌레르
-													</span>
-													<div class="other">
-														<div class="play">
-															<span>▶</span>
-															<span>1,002</span>
-														</div>
-														<div class="like">
-															<span>♥</span>
-															<span>50</span>
-														</div>
-													</div>
-												</figcaption>
-											</a>
-										</figure>
-									</div>
-									<div class="d-col-3 m-col-1 t-col-2">
-										<figure>
-											<a href="javascript:void(0)">
-												<div class="thum">
-													<img src="./images/grid_sample.jpg">
-													<span class="total-time">0:34</span>
-												</div>
-												<figcaption>
-													<p>
-														<span class="brand-name">
-															[Marieclairekorea]
-														</span>
-														<span class="desc">
-															데님 팬츠, 어떻게 입을까.
-														</span>
-													</p>
-													<span class="publisher">
-														마리끌레르
-													</span>
-													<div class="other">
-														<div class="play">
-															<span>▶</span>
-															<span>1,002</span>
-														</div>
-														<div class="like">
-															<span>♥</span>
-															<span>50</span>
-														</div>
-													</div>
-												</figcaption>
-											</a>
-										</figure>
-									</div>
-									<div class="d-col-3 m-col-1 t-col-2">
-										<figure>
-											<a href="javascript:void(0)">
-												<div class="thum">
-													<img src="./images/grid_sample.jpg">
-													<span class="total-time">0:34</span>
-												</div>
-												<figcaption>
-													<p>
-														<span class="brand-name">
-															[Marieclairekorea]
-														</span>
-														<span class="desc">
-															데님 팬츠, 어떻게 입을까.
-														</span>
-													</p>
-													<span class="publisher">
-														마리끌레르
-													</span>
-													<div class="other">
-														<div class="play">
-															<span>▶</span>
-															<span>1,002</span>
-														</div>
-														<div class="like">
-															<span>♥</span>
-															<span>50</span>
-														</div>
-													</div>
-												</figcaption>
-											</a>
-										</figure>
-									</div>
-									<div class="d-col-3 m-col-1 t-col-2">
-										<figure>
-											<a href="javascript:void(0)">
-												<div class="thum">
-													<img src="./images/grid_sample.jpg">
-													<span class="total-time">0:34</span>
-												</div>
-												<figcaption>
-													<p>
-														<span class="brand-name">
-															[Marieclairekorea]
-														</span>
-														<span class="desc">
-															데님 팬츠, 어떻게 입을까.
-														</span>
-													</p>
-													<span class="publisher">
-														마리끌레르
-													</span>
-													<div class="other">
-														<div class="play">
-															<span>▶</span>
-															<span>1,002</span>
-														</div>
-														<div class="like">
-															<span>♥</span>
-															<span>50</span>
-														</div>
-													</div>
-												</figcaption>
-											</a>
-										</figure>
-									</div>
-									<div class="d-col-3 m-col-1 t-col-2">
-										<figure>
-											<a href="javascript:void(0)">
-												<div class="thum">
-													<img src="./images/grid_sample.jpg">
-													<span class="total-time">0:34</span>
-												</div>
-												<figcaption>
-													<p>
-														<span class="brand-name">
-															[Marieclairekorea]
-														</span>
-														<span class="desc">
-															데님 팬츠, 어떻게 입을까.
-														</span>
-													</p>
-													<span class="publisher">
-														마리끌레르
-													</span>
-													<div class="other">
-														<div class="play">
-															<span>▶</span>
-															<span>1,002</span>
-														</div>
-														<div class="like">
-															<span>♥</span>
-															<span>50</span>
-														</div>
-													</div>
-												</figcaption>
-											</a>
-										</figure>
-									</div>
+<?
+	}
+?>									
 								</div>
 							</div>
 							<div class="more-cnt">
