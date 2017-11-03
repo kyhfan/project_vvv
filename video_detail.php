@@ -26,9 +26,8 @@
 						[<?=$data["video_company"]?>] <?=$data["video_title"]?><br />
 						▶<span id="view_count"><?=number_format($data["play_count"])?></span><br />
 						♥<span id="like_count"><?=number_format($data["like_count"])?></span><br />
-						<a href="#">fb</a>
-						<a href="#">ks</a>
-						<a href="#">kt</a>
+						<a href="#" onclick="sns_share('fb', 'detail')">fb</a>
+						<a href="#" onclick="sns_share('kt', 'detail')">kt</a>
 						<a href="javascript:void(0)" onclick="like_video('<?=$idx?>')" id="like_img">like</a>
 					</div>
 <?
@@ -103,7 +102,49 @@
 			play_flag = 1;
 		}
     }
-	
+
+    function sns_share(media, flag)
+    {
+        if (media == "fb")
+        {
+    
+            var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.valuable-viral-video.com/index.php?media=fb?v=<?=$idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
+            $.ajax({
+                type   : "POST",
+                async  : false,
+                url    : "./main_exec.php",
+                data:{
+                    "exec"      : "insert_share_info",
+                    "sns_media" : media,
+                    "sns_flag"	: flag
+                }
+            });
+        }else{
+            Kakao.Link.sendTalkLink({
+            label: "|도|미|노|챌|린|지|\r\n\r\n무너지지 않는 도미노를 발견하면 핸드폰을 흔들어주세요!\r\n\r\n도미노야 어디한번 해보자!\r\n니가 무너지나 안 무너지나!",
+            image: {
+                src: 'http://valuable-viral-video.com/images/sns_share.jpg',
+                width: '1200',
+                height: '630'
+            },
+            webButton: {
+                text: "|도|미|노|챌|린|지|",
+                url: 'http://valuable-viral-video.com/index.php?media=kt' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+            }
+            });
+            $.ajax({
+                type   : "POST",
+                async  : false,
+                url    : "./main_exec.php",
+                data:{
+                    "exec"      : "insert_share_info",
+                    "sns_media" : media,
+                    "sns_flag"	: flag
+                }
+            });
+        }
+    }
+
 	</script>
 	</body>
 </html>
