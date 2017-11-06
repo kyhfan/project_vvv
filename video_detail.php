@@ -239,7 +239,7 @@
 
 	function onYouTubeIframeAPIReady() {
 		player = new YT.Player('video_area', {
-        	height: yt_width,
+        	height: yt_height,
         	width: yt_width,
         	videoId: '<?=$yt_flag[1]?>',
         	events: {
