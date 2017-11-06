@@ -327,7 +327,7 @@
 					$(".icon.like").attr("class","icon liked");
 					$("#like_count").html(Number($("#like_count").html()) + 1);
 				}else{
-					$(".icon.like").attr("class","icon like");
+					$(".icon.liked").attr("class","icon like");
 					$("#like_count").html($("#like_count").html() - 1);
 				}
 			}
