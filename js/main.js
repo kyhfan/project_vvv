@@ -201,6 +201,12 @@
         {
             var comment_text 	= $("#comment_text").val();
 
+			if (comment_text == "")
+			{
+				alert("댓글 입력 후 등록을 클릭해 주세요.");
+				return false;
+			}
+
             $.ajax({
                 type   : "POST",
                 async  : false,

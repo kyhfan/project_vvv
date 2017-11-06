@@ -187,6 +187,40 @@
 			
 		}
 
+        function ins_comment(idx)
+        {
+            var comment_text 	= $("#comment_text").val();
+
+			if (comment_text == "")
+			{
+				alert("댓글 입력 후 등록을 눌러주세요.");
+				return false;
+			}
+
+            $.ajax({
+                type   : "POST",
+                async  : false,
+                url    : "./main_exec.php",
+                data:{
+                    "exec"				    : "insert_comment",
+                    "idx"		            : idx,
+                    "comment_text"          : comment_text
+                },
+                success: function(response){
+                    console.log(response);
+                    if (response.match("Y") == "Y")
+                    {
+                        alert("덧글이 입력되었습니다.");
+                        location.reload();
+                    }else{
+                        alert("다시 입력해 주세요.");
+                        location.reload();
+                    }
+                }
+            });			
+        }
+
+
 		function search_click(obj)
 		{
 
