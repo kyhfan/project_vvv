@@ -11,6 +11,7 @@ ul {
 }
 a {
 	color: #212121;
+	text-decoration: none;
 }
 a:hover,
 a:active,
@@ -481,9 +482,6 @@ figure figcaption .other div span:last-child {
 }
 .video.main figcaption .action-group .share button {
 	background: url(../images/icon_share.png) center center / cover no-repeat;
-}
-.video.main figcaption .action-group .share button:hover {
-	background: url(../images/icon_share_active.png) center center / cover no-repeat;
 }
 .video.main figcaption .action-group .like button {
 	background: url(../images/icon_like.png) center center / cover no-repeat;
@@ -984,11 +982,11 @@ figure figcaption .other div span:last-child {
 	.video.main figcaption .action-group .share {
 		margin-right: 14px;
 	}
-	.video.main figcaption .action-group .share button {
-		background: url(../images/icon_share.png) center center / cover no-repeat;
+	.video.main figcaption .action-group .share button:hover {
+		background: url(../images/icon_share_active.png) center center / cover no-repeat;
 	}
-	.video.main figcaption .action-group .like button {
-		background: url(../images/icon_like.png) center center / cover no-repeat;
+	.video.main figcaption .action-group .like button:hover {
+		background: url(../images/icon_like_active.png) center center / cover no-repeat;
 	}
 	.detail .divide-block {
 		width: 100vw;

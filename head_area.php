@@ -43,7 +43,14 @@
 										</div>
 									</div>
 									<div class="mobile-layout">
-										<button onclick="clearSearch();">
+<?
+    if (strpos(basename($_SERVER['PHP_SELF']),"video_detail.php") !== false)
+        $stop_flag    = "player.stopVideo();";
+    else
+        $stop_flag    = "";
+    
+?>                                    
+										<button onclick="<?=$stop_flag?>clearSearch();">
 											<span class="blind">검색</span>
 											<span class="icon-search"></span>
 										</button>
