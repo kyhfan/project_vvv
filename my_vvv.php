@@ -29,7 +29,7 @@
 								<p>
 									<span class="ellipse"></span>
 <?
-	if ($_SESSION['ss_vvv_email'])
+	if ($_SESSION['ss_vvv_email'] == $my_email)
 	{
 ?>									
 									<span class="name"><?=$_SESSION['ss_vvv_name']?></span>님 반갑습니다
