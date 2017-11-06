@@ -96,7 +96,7 @@
 				$result2	= mysqli_query($my_db, $query2);
 				$flag	= "Y";
 			}else{
-				$query		= "UPDATE ".$_gl['like_info_table']." SET like_flag='N' WHERE idx='".$like_data["idx"]."'";
+				$query		= "UPDATE ".$_gl['like_info_table']." SET like_flag='N' WHERE idx='".$v_idx."'";
 				$result		= mysqli_query($my_db, $query);
 
 				$query2		= "UPDATE ".$_gl['video_info_table']." SET like_count=like_count-1 WHERE idx='".$v_idx."'";
