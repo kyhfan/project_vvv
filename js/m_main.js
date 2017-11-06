@@ -42,7 +42,14 @@
 
 		function clearSearch()
 		{
-			$("#search_m_txt").val("");
+			if($vvv.hasClass('searchOpen')) {
+				TweenMax.to($('.box-search'), 0.3, {autoAlpha: 0});
+				$vvv.removeClass('searchOpen');
+				$("#search_m_txt").val("");
+			}else{
+				TweenMax.to($('.box-search'), 0.3, {autoAlpha: 1});
+				$vvv.addClass('searchOpen');
+			}
 		}
 
 		function more_video()
