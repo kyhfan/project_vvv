@@ -1,6 +1,8 @@
 <?
 	include_once "./header.php";
 
+	$ref_url = $_REQUEST["refurl"];
+	
 	if ($_SESSION['ss_vvv_email'])
 		echo "<script>location.href='index.php';</script>";
 

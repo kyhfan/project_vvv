@@ -488,6 +488,9 @@ figure figcaption .other div span:last-child {
 .video.main figcaption .action-group .like button {
 	background: url(../images/icon_like.png) center center / cover no-repeat;
 }
+.video.main figcaption .action-group .liked button {
+	background: url(../images/icon_like_active.png) center center / cover no-repeat;
+}
 .video.main figcaption .action-group .like button:hover {
 	background: url(../images/icon_like_active.png) center center / cover no-repeat;
 }

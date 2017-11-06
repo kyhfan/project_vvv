@@ -1,10 +1,7 @@
 <?
 	include_once "./header_video.php";
 
-	$like_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$idx."' AND like_flag='Y'";
-	$like_result	= mysqli_query($my_db, $like_query);
-	$like_count		= mysqli_num_rows($like_result);
-
+	$idx = $_REQUEST["idx"];
 ?>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -18,28 +15,185 @@
 <?
 	include_once "./head_area.php";
 ?>				
-					<div class="content member">
-						<div id="video_area">
-
-						</div>
-						<!-- <iframe allowfullscreen="1" src="https://www.youtube.com/embed/<?=$yt_flag[1]?>??version=3&enablejsapi=1" frameborder="0" id="ytplayer" class="ytplayer" width="200" height="200"></iframe> -->
-						[<?=$data["video_company"]?>] <?=$data["video_title"]?><br />
-						▶<span id="view_count"><?=number_format($data["play_count"])?></span><br />
-						♥<span id="like_count"><?=number_format($data["like_count"])?></span><br />
-						<a href="#" onclick="sns_share('fb', 'detail')">fb</a>
-						<a href="#" onclick="sns_share('kt', 'detail')">kt</a>
+					<div class="content detail">
+						<div class="wrapper">
+							<div class="video main">
+								<div class="inner">
+									<figure>
+										<div class="vid-layer"  id="video_area">
+											<img src="./images/main_video.png">
+										</div>
+										</a>
+										<figcaption>
+											<p>
+												<span class="brand-name">
+													[<?=$data["video_company"]?>]
+												</span>
+												<span class="desc">
+													<?=$data["video_title"]?>
+												</span>
+											</p>
+											<!-- <span class="publisher">
+												마리끌레르
+											</span> -->
+											<div class="other">
+												<div class="play">
+													<span>▶</span>
+													<span id="view_count"><?=number_format($data["play_count"])?></span>
+												</div>
+												<div class="like">
+													<span>♥</span>
+													<span id="like_count"><?=number_format($data["like_count"])?></span>
+												</div>
+											</div>
+											<div class="action-group">
+												<div class="icon share">
+													<button type="button" onclick="alert('작업예정!')">
+														<span class="blind">공유하기</span>
+													</button>
+												</div>
 <?
-	if ($like_count > 0)
+	$like_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$idx."' AND like_flag='Y'";
+	$like_result	= mysqli_query($my_db, $like_query);
+	$like_count		= mysqli_num_rows($like_result);
+	
+	if ($_SESSION['ss_vvv_email'])
 	{
+		if ($like_count > 0)
+		{
 ?>						
-						<a href="javascript:void(0)" onclick="like_video('<?=$idx?>')" id="like_img">liked</a>
+												<div class="icon liked">
+<?
+		}else{
+?>		
+												<div class="icon like">
+<?
+		}
+?>				
+													<button type="button" onclick="like_video('<?=$idx?>')" id="like_img">
+														<span class="blind">좋아요</span>
+													</button>
+												</div>
 <?
 	}else{
 ?>		
-						<a href="javascript:void(0)" onclick="like_video('<?=$idx?>')" id="like_img">like</a>
+												<div class="icon like">
+													<button type="button" onclick="alert('로그인 후 이용해 주세요.');location.href='login.php?refurl=video_detail.php?idx=<?=$idx?>';" id="like_img">
+														<span class="blind">좋아요</span>
+													</button>
+												</div>
 <?
 	}
-?>				
+?>										
+											</div>
+										</figcaption>
+									</figure>
+								</div>
+							</div>
+							<div class="divide-block vw"></div>
+<?
+	$related_query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE video_company='".$data["video_company"]."' AND idx NOT IN ('".$data["idx"]."') ORDER BY like_count DESC LIMIT 4";
+	$related_result		= mysqli_query($my_db, $related_query);
+	$related_count 		= mysqli_num_rows($related_result);
+	if ($related_count > 0)
+	{
+?>							
+							<div class="grid related">
+								<h5 class="tt">관련 영상</h5>
+								<div class="row">
+<?
+		while ($related_data = mysqli_fetch_array($related_result))
+		{
+?>									
+									<div class="d-col-4 m-col-1">
+										<figure>
+											<a href="javascript:void(0)" class="clearfix">
+												<div class="thum">
+													<div class="thumnail-img" style="background-image:url(./images/grid_sample.jpg);"></div>
+													<span class="total-time">0:34</span>
+												</div>
+												<figcaption>
+													<p>
+														<span class="brand-name">
+															[<?=$related_data["video_company"]?>]
+														</span>
+														<span class="desc">
+															<?=$related_data["video_title"]?>
+														</span>
+													</p>
+													<!-- <span class="publisher">
+														마리끌레르
+													</span> -->
+													<div class="other">
+														<div class="play">
+															<span>▶</span>
+															<span><?=number_format($related_data["play_count"])?></span>
+														</div>
+														<div class="like">
+															<span>♥</span>
+															<span><?=number_format($related_data["like_count"])?></span>
+														</div>
+													</div>
+												</figcaption>
+											</a>
+										</figure>
+									</div>
+<?
+		}
+?>									
+								</div>
+							</div>
+<?
+	}
+?>							
+							<div class="rep-area">
+								<h5 class="tt">
+									댓글
+								</h5>
+								<div class="input-group">
+									<input type="text" placeholder="댓글을 입력해 주세요" id="comment_text">
+<?
+	if ($_SESSION['ss_vvv_email'])
+	{
+?>									
+									<button type="button" onclick="ins_comment('<?=$data['idx']?>')">
+<?
+	}else{
+?>		
+									<button type="button" onclick="alert('로그인 후 이용해 주세요.');location.href='login.php?refurl=video_detail.php?idx=<?=$idx?>';">
+<?
+	}
+?>							
+										<span>등록</span>
+									</button>
+								</div>
+								<div class="rep-list">
+									<ul>
+<?
+	$comment_query		= "SELECT * FROM ".$_gl['comment_info_table']." WHERE v_idx='".$idx."' ORDER BY idx DESC";
+	$comment_result		= mysqli_query($my_db, $comment_query);
+
+	while ($comment_data = mysqli_fetch_array($comment_result))
+	{
+?>										
+										<li>
+											<span class="name">
+												<?=$comment_data["mb_email"]?>
+											</span>
+											<span class="msg">
+												<?=$comment_data["comment_text"]?>
+											</span>
+											<a href="javascript:void(0)" class="report">
+												신고
+											</a>
+										</li>
+<?
+	}
+?>										
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 <?
 	include_once "./search_area.php";
@@ -75,8 +229,8 @@
     var player;
     function onYouTubeIframeAPIReady() {
 		player = new YT.Player('video_area', {
-        	height: '360',
-        	width: '640',
+        	height: '582',
+        	width: '1040',
         	videoId: '<?=$yt_flag[1]?>',
         	events: {
             	// 'onReady': onPlayerReady,
@@ -154,8 +308,33 @@
                 }
             });
         }
-    }
+	}
+	
+	function like_video(v_idx)
+	{
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "./main_exec.php",
+			data:{
+				"exec"				    : "like_video",
+				"v_idx"		            : v_idx
+			},
+			success: function(response){
+				console.log(response);
+				if (response.match("Y") == "Y")
+				{
+					$(".icon.like").attr("class","icon liked");
+					$("#like_count").html(Number($("#like_count").html()) + 1);
+				}else{
+					$(".icon.like").attr("class","icon like");
+					$("#like_count").html($("#like_count").html() - 1);
+				}
+			}
+		});			
+	}
 
+	
 	</script>
 	</body>
 </html>

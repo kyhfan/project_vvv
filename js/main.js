@@ -197,25 +197,28 @@
             });			
         }
         
-        function like_video(v_idx)
+        function ins_comment(idx)
         {
+            var comment_text 	= $("#comment_text").val();
+
             $.ajax({
                 type   : "POST",
                 async  : false,
                 url    : "./main_exec.php",
                 data:{
-                    "exec"				    : "like_video",
-                    "v_idx"		            : v_idx
+                    "exec"				    : "insert_comment",
+                    "idx"		            : idx,
+                    "comment_text"          : comment_text
                 },
                 success: function(response){
                     console.log(response);
                     if (response.match("Y") == "Y")
                     {
-                        $("#like_img").html("liked");
-                        $("#like_count").html(Number($("#like_count").html()) + 1);
+                        alert("덧글이 입력되었습니다.");
+                        location.reload();
                     }else{
-                        $("#like_img").html("like");
-                        $("#like_count").html($("#like_count").html() - 1);
+                        alert("다시 입력해 주세요.");
+                        location.reload();
                     }
                 }
             });			
