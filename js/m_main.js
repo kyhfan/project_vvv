@@ -226,8 +226,8 @@
 
             video_pg 	        = 0;
             current_page        = 1;
-            // console.log(obj.value);
-            $(".content").hide();
+
+			$(".content").hide();
             $(".search-result").show();
             $("#search_keyword").html(obj);
 
