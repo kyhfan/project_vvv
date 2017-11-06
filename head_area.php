@@ -59,7 +59,7 @@
 									</div>
 								</div>
 								<div class="close-box">
-									<button onclick="actionSearch();">
+									<button onclick="clearSearch();">
 										<span class="blind">닫기</span>
 										<span class="icon-close"></span>
 									</button>
