@@ -21,7 +21,7 @@
 								<div class="inner">
 									<figure>
 										<div class="vid-layer"  id="video_area">
-											<img src="./images/main_video.png">
+											<img src="./images/loading.jpg">
 										</div>
 										</a>
 										<figcaption>
@@ -226,11 +226,21 @@
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    var player;
-    function onYouTubeIframeAPIReady() {
+	var player;
+	
+	if ($(window).width() < 1040)
+	{
+		var yt_width = $(window).width();
+		var yt_height = ($(window).width()*9)/16;
+	}else{
+		var yt_width = '1040';
+		var yt_height = '582';
+	}		
+
+	function onYouTubeIframeAPIReady() {
 		player = new YT.Player('video_area', {
-        	height: '582',
-        	width: '1040',
+        	height: yt_width,
+        	width: yt_width,
         	videoId: '<?=$yt_flag[1]?>',
         	events: {
             	// 'onReady': onPlayerReady,
@@ -241,7 +251,6 @@
 
 	var play_flag = 0;
     function onPlayerStateChange(event) {
-		console.log(event);
 		if (event.data == 1)
 		{
 			if (play_flag == 0)
@@ -255,7 +264,6 @@
 						"v_idx"		            : "<?=$idx?>"
 					},
 					success: function(response){
-						console.log(response);
 						if (response.match("Y") == "Y")
 						{
 							$("#view_count").html(Number($("#view_count").html()) + 1);
