@@ -1,5 +1,10 @@
 <?
 	include_once "./header_video.php";
+
+	$like_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$idx."' AND like_flag='Y'";
+	$like_result	= mysqli_query($my_db, $like_query);
+	$like_count		= mysqli_num_rows($like_result);
+
 ?>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -23,7 +28,18 @@
 						♥<span id="like_count"><?=number_format($data["like_count"])?></span><br />
 						<a href="#" onclick="sns_share('fb', 'detail')">fb</a>
 						<a href="#" onclick="sns_share('kt', 'detail')">kt</a>
+<?
+	if ($like_count > 0)
+	{
+?>						
+						<a href="javascript:void(0)" onclick="like_video('<?=$idx?>')" id="like_img">liked</a>
+<?
+	}else{
+?>		
 						<a href="javascript:void(0)" onclick="like_video('<?=$idx?>')" id="like_img">like</a>
+<?
+	}
+?>				
 					</div>
 <?
 	include_once "./search_area.php";
