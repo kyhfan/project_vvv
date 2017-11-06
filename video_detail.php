@@ -178,7 +178,7 @@
 ?>										
 										<li>
 											<span class="name">
-												<?=$comment_data["mb_email"]?>
+												<a href="my_vvv.php?email=<?=$comment_data["mb_email"]?>"><?=$comment_data["mb_name"]?></a>
 											</span>
 											<span class="msg">
 												<?=$comment_data["comment_text"]?>

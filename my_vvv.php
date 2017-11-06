@@ -1,11 +1,12 @@
 <?
 	include_once "./header.php";
 
-	if (!$_SESSION['ss_vvv_email'])
-		echo "<script>location.href='login.php';</script>";
+	// if (!$_SESSION['ss_vvv_email'])
+		// echo "<script>location.href='login.php';</script>";
 
+	$my_email	= $_REQUEST["email"];
 
-	$my_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND like_flag='Y'";
+	$my_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$my_email."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
 	$my_count		= mysqli_num_rows($my_result);
 
@@ -27,7 +28,22 @@
 							<div class="rs-text">
 								<p>
 									<span class="ellipse"></span>
+<?
+	if ($_SESSION['ss_vvv_email'])
+	{
+?>									
 									<span class="name"><?=$_SESSION['ss_vvv_name']?></span>님 반갑습니다
+<?
+	}else{
+		$member_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_email='".$my_email."'";
+		$member_result		= mysqli_query($my_db, $member_query);
+		$member_data		= mysqli_fetch_array($member_result);
+	
+?>		
+									<span class="name"><?=$member_data['mb_name']?></span>님의 LIKE 입니다
+<?
+	}
+?>							
 								</p>
 							</div>
 							<div class="sorting">
