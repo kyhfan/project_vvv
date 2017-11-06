@@ -1,9 +1,5 @@
 <?
 	include_once "./header.php";
-
-	if ($_SESSION['ss_vvv_email'])
-		echo "<script>location.href='index.php';</script>";
-
 ?>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
