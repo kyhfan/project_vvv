@@ -35,7 +35,7 @@
 								<hr class="line_ys">
 								<div class="wrap-buttons">
 									<div class="button">
-										<a href="javascript:loginWithKakao()">
+										<a href="javascript:loginWithKakao('<?=$ref_url?>')">
 											<img src="./images/kakao.jpg" alt="카카오 로그인" class="mobile-layout">
 											<img src="./images/kakao_desktop.jpg" alt="카카오 로그인" class="desktop-layout">
 										</a>

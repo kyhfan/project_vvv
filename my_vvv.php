@@ -22,7 +22,7 @@
 					<div class="desktop-layout big"></div>
 <?
 	include_once "./head_area.php";
-?>				
+?>
 					<div class="content myVVV">
 						<div class="wrapper">
 							<div class="rs-text">

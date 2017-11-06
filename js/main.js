@@ -225,7 +225,7 @@
         }
 
     // 카카오 로그인
-    function loginWithKakao()
+    function loginWithKakao(refurl)
     {
         // 로그인 창을 띄웁니다.
         Kakao.Auth.login({
@@ -252,7 +252,10 @@
                         success: function(response){
                             if (response.match("Y") == "Y")
                             {
-                                location.href	= "index.php";
+                                if (refurl == "")
+                                    location.href	= "index.php";
+                                else
+                                    location.href	= refurl;
                             }else{
                                 alert("다시 시도해 주세요!");
                                 location.reload();
