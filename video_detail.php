@@ -231,7 +231,7 @@
 	if ($(window).width() < 1040)
 	{
 		var yt_width = $(window).width();
-		var yt_height = ($(window).width()*9)/16;
+		var yt_height = ($(window).width()/16)*9;
 	}else{
 		var yt_width = '1040';
 		var yt_height = '582';
