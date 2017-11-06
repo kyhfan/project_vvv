@@ -43,7 +43,7 @@
 										</div>
 									</div>
 									<div class="mobile-layout">
-										<button onclick="actionSearch();">
+										<button onclick="clearSearch();">
 											<span class="blind">검색</span>
 											<span class="icon-search"></span>
 										</button>

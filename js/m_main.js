@@ -40,6 +40,11 @@
 			}
 		}
 
+		function clearSearch()
+		{
+			$("#search_m_txt").val("");
+		}
+
 		function more_video()
 		{
 			video_pg = video_pg + 6;
