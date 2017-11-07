@@ -310,7 +310,7 @@
 			});
 		} else if(media == "kt") {
 			Kakao.Link.sendTalkLink({
-				label: "카카오톡 영상공유 테스트 메시지",
+				label: "<?='['.$data['video_company'].']'.$data['video_title']?>",
 				image: {
 					src: 'https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg',
 					width: '1200',
