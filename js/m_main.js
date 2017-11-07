@@ -181,7 +181,7 @@
 						// 	$("#search_more").hide();
 						// else
 						// 	$("#search_more").show();
-
+						$(obj).blur();
 						actionSearch();
 						$(window).scrollTop(0);
 						$("#search_count").html(res_arr[0]);

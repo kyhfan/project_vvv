@@ -37,6 +37,7 @@ input[type="tel"] {
 	border: 0;
 	padding: 0;
 	width: 100%;
+	border-radius: 0;
 }
 button {
 	background: transparent;
@@ -129,26 +130,6 @@ h1,h2,h3,h4,h5,h6,p {
 	font-size: 12px;
 	font-weight: 900;
 }
-#header .inner .nav ul li a:hover span {
-	color: #212121;
-}
-#header .inner .nav ul li a span::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -2px;
-	width: 0;
-	height: 1px;
-	background: #212121;
-	-webkit-transition: width 0.15s ease;
-	transition: width 0.15s ease;
-}
-#header .inner .nav ul li a:hover span::after {
-	width: 100%;
-}
-#header .inner .nav ul li a.active span::after {
-	width: 100%;
-}
 #header .inner .nav .desktop-layout {
 	display: none;
 }
@@ -226,6 +207,7 @@ h1,h2,h3,h4,h5,h6,p {
 .search-result {
 	display: none;
 	padding: 100px 0 44px;
+	min-height: 380px;
 }
 .container .rs-text {
 	width: 83.4%;
@@ -334,9 +316,6 @@ figure figcaption .other div span:last-child {
 	bottom: -2px;
 	left: -3%;
 	background: #6aba4e;
-}
-.sorting a:hover::after {
-	width: 105%;
 }
 .sorting a.active::after {
 	width: 105%;
@@ -778,6 +757,26 @@ figure figcaption .other div span:last-child {
 		font-size: 24px;
 		font-weight: 900;
 	}
+	#header .inner .nav ul li a:hover span {
+		color: #212121;
+	}
+	#header .inner .nav ul li a span::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 0;
+		height: 1px;
+		background: #212121;
+		-webkit-transition: width 0.15s ease;
+		transition: width 0.15s ease;
+	}
+	#header .inner .nav ul li a:hover span::after {
+		width: 100%;
+	}
+	#header .inner .nav ul li a.active span::after {
+		width: 100%;
+	}
 	#header .inner .nav .mobile-layout {
 		display: none;
 	}
@@ -892,6 +891,9 @@ figure figcaption .other div span:last-child {
 	.sorting a {
 		font-size: 26px;
 		font-weight: 700;
+	}
+	.sorting a:hover::after {
+		width: 105%;
 	}
 	.more-cnt {
 		display: block;
