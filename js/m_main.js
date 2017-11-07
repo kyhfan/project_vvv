@@ -4,9 +4,9 @@
 		var video_pg 	        = 0;
 		var total_video_num 	= $("#total_video_num").val();
 		var total_page 			= $("#total_page").val();
-        var current_page        = 1;
+		var current_page        = 1;
 
-        $(window).on('scroll', function() {
+		$(window).on('scroll', function() {
 			var $headerHeight = document.getElementById('header').height || $header.height();
 			var currentScroll = $(this).scrollTop();
 			if(currentScroll > 254 && !$vvv.hasClass('menu-opened')) {
@@ -24,7 +24,7 @@
 					more_video();
 				else
 					more_search_video();
-				
+
 			}
 			// console.log(currentScroll);
 		});
@@ -68,8 +68,8 @@
 				},
 				success: function(response){
 					console.log(response);
-                    res_arr	= response.split("||");
-                    current_page = current_page + 1;
+					res_arr	= response.split("||");
+					current_page = current_page + 1;
 					// if (current_page >= total_page)
 					// 	$("#main_more").hide();
 					// else
@@ -90,13 +90,13 @@
 					"video_pg"				: video_pg,
 					"total_video_num"		: total_video_num,
 					"total_page"			: total_page,
-                    "search_keyword"		: $("#search_keyword").html(),
-                    "sort_val"				: sort_val
-                },
+					"search_keyword"		: $("#search_keyword").html(),
+					"sort_val"				: sort_val
+				},
 				success: function(response){
-                    console.log(response);
-                    res_arr	= response.split("||");
-                    current_page = current_page + 1;
+					console.log(response);
+					res_arr	= response.split("||");
+					current_page = current_page + 1;
 					// if (current_page >= total_page)
 					// 	$("#search_more").hide();
 					// else
@@ -118,10 +118,10 @@
 
 		});
 
-        function sort_area(val)
+		function sort_area(val)
 		{
-            video_pg 	        = 0;
-            current_page        = 1;
+			video_pg 	        = 0;
+			current_page        = 1;
 
 			$.ajax({
 				type   : "POST",
@@ -135,22 +135,22 @@
 				},
 				success: function(response){
 					res_arr	= response.split("||");
-                    // if (current_page >= total_page)
-                    //     $("#main_more").hide();
+					// if (current_page >= total_page)
+					//     $("#main_more").hide();
 					// else
 					// 	$("#main_more").show();
 					$("#main_area").html(res_arr[1]);
 				}
 			});
-			
+
 		}
 
 		function search_video(obj)
 		{
 			if(window.event.keyCode == 13)
 			{
-                video_pg 	        = 0;
-                current_page        = 1;
+				video_pg 	        = 0;
+				current_page        = 1;
 				// console.log(obj.value);
 				$(".content").hide();
 				$(".search-result").show();
@@ -168,28 +168,28 @@
 						"sort_val"				: sort_val
 					},
 					success: function(response){
-                        res_arr	= response.split("||");
-                        total_page  = res_arr[2];
-                        // console.log(current_page+"||"+total_page);
-                        
-                        // if (current_page >= total_page)
+						res_arr	= response.split("||");
+						total_page  = res_arr[2];
+						// console.log(current_page+"||"+total_page);
+
+						// if (current_page >= total_page)
 						// 	$("#search_more").hide();
 						// else
 						// 	$("#search_more").show();
 
 						actionSearch();
 						$(window).scrollTop(0);
-                        $("#search_count").html(res_arr[0]);
+						$("#search_count").html(res_arr[0]);
 						$("#search_area").html(res_arr[1]);
 					}
 				});
 			}
-			
+
 		}
 
-        function ins_comment(idx)
-        {
-            var comment_text 	= $("#comment_text").val();
+		function ins_comment(idx)
+		{
+			var comment_text 	= $("#comment_text").val();
 
 			if (comment_text == "")
 			{
@@ -197,116 +197,116 @@
 				return false;
 			}
 
-            $.ajax({
-                type   : "POST",
-                async  : false,
-                url    : "./main_exec.php",
-                data:{
-                    "exec"				    : "insert_comment",
-                    "idx"		            : idx,
-                    "comment_text"          : comment_text
-                },
-                success: function(response){
-                    console.log(response);
-                    if (response.match("Y") == "Y")
-                    {
-                        alert("덧글이 입력되었습니다.");
-                        location.reload();
-                    }else{
-                        alert("다시 입력해 주세요.");
-                        location.reload();
-                    }
-                }
-            });			
-        }
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./main_exec.php",
+				data:{
+					"exec"				    : "insert_comment",
+					"idx"		            : idx,
+					"comment_text"          : comment_text
+				},
+				success: function(response){
+					console.log(response);
+					if (response.match("Y") == "Y")
+					{
+						alert("덧글이 입력되었습니다.");
+						location.reload();
+					}else{
+						alert("다시 입력해 주세요.");
+						location.reload();
+					}
+				}
+			});
+		}
 
 
 		function search_click(obj)
 		{
 
-            video_pg 	        = 0;
-            current_page        = 1;
+			video_pg 	        = 0;
+			current_page        = 1;
 
 			$(".content").hide();
-            $(".search-result").show();
-            $("#search_keyword").html(obj);
+			$(".search-result").show();
+			$("#search_keyword").html(obj);
 
-            $.ajax({
-                type   : "POST",
-                async  : false,
-                url    : "./ajax_video.php",
-                data:{
-                    "video_pg"				: video_pg,
-                    "total_video_num"		: total_video_num,
-                    "total_page"			: total_page,
-                    "search_keyword"		: obj,
-                    "sort_val"				: sort_val
-                },
-                success: function(response){
-                    res_arr	= response.split("||");
-                    total_page  = res_arr[2];
-                    console.log(current_page+"||"+total_page);
-                    
-                    // if (current_page >= total_page)
-                    //     $("#search_more").hide();
-                    // else
-                    //     $("#search_more").show();
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./ajax_video.php",
+				data:{
+					"video_pg"				: video_pg,
+					"total_video_num"		: total_video_num,
+					"total_page"			: total_page,
+					"search_keyword"		: obj,
+					"sort_val"				: sort_val
+				},
+				success: function(response){
+					res_arr	= response.split("||");
+					total_page  = res_arr[2];
+					console.log(current_page+"||"+total_page);
+
+					// if (current_page >= total_page)
+					//     $("#search_more").hide();
+					// else
+					//     $("#search_more").show();
 
 					actionSearch();
 					$(window).scrollTop(0);
-                    $("#search_count").html(res_arr[0]);
-                    $("#search_area").html(res_arr[1]);
-                }
-            });			
+					$("#search_count").html(res_arr[0]);
+					$("#search_area").html(res_arr[1]);
+				}
+			});
 		}
 
-    // 카카오 로그인
-    function loginWithKakao(refurl)
-    {
-        // 로그인 창을 띄웁니다.
-        Kakao.Auth.login({
-        success: function(authObj) {
-            // 로그인 성공시, API를 호출합니다.
-            Kakao.API.request({
-                url: '/v1/user/me',
-                success: function(res) {
-                    // console.log(JSON.stringify(res));
-                    $.ajax({
-                        type   : "POST",
-                        async  : false,
-                        url    : "./main_exec.php",
-                        data:{
-                            "exec"				: "member_kakao_login",
-                            "login_way"			: "kakao",
-                            "mb_email"			: res.kaccount_email,
-                            "mb_email_verified"	: res.kaccount_email_verified,
-                            "mb_way_id"			: res.id,
-                            "mb_profile_img"	: res.properties.profile_image,
-                            "mb_name"			: res.properties.nickname,
-                            "mb_thumbnail_img"	: res.properties.thumbnail_image
-                        },
-                        success: function(response){
-                            if (response.match("Y") == "Y")
-                            {
-                                if (refurl == "")
-                                    location.href	= "index.php";
-                                else
-                                    location.href	= refurl;
-                            }else{
-                                alert("다시 시도해 주세요!");
-                                location.reload();
-                            }
+	// 카카오 로그인
+	function loginWithKakao(refurl)
+	{
+		// 로그인 창을 띄웁니다.
+		Kakao.Auth.login({
+		success: function(authObj) {
+			// 로그인 성공시, API를 호출합니다.
+			Kakao.API.request({
+				url: '/v1/user/me',
+				success: function(res) {
+					// console.log(JSON.stringify(res));
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "./main_exec.php",
+						data:{
+							"exec"				: "member_kakao_login",
+							"login_way"			: "kakao",
+							"mb_email"			: res.kaccount_email,
+							"mb_email_verified"	: res.kaccount_email_verified,
+							"mb_way_id"			: res.id,
+							"mb_profile_img"	: res.properties.profile_image,
+							"mb_name"			: res.properties.nickname,
+							"mb_thumbnail_img"	: res.properties.thumbnail_image
+						},
+						success: function(response){
+							if (response.match("Y") == "Y")
+							{
+								if (refurl == "")
+									location.href	= "index.php";
+								else
+									location.href	= refurl;
+							}else{
+								alert("다시 시도해 주세요!");
+								location.reload();
+							}
 
-                        }
-                    });
-                },
-                fail: function(error) {
-                alert(JSON.stringify(error));
-                }
-            });
-        },
-        fail: function(err) {
-            alert(JSON.stringify(err));
-        }
-        });
-    }
+						}
+					});
+				},
+				fail: function(error) {
+				alert(JSON.stringify(error));
+				}
+			});
+		},
+		fail: function(err) {
+			alert(JSON.stringify(err));
+		}
+		});
+	}

@@ -8,8 +8,8 @@
 	$result		= mysqli_query($my_db, $query);
 	$data		= mysqli_fetch_array($result);
 
-	$yt_flag 	= explode("v=",$data["video_link"]);		
-	
+	$yt_flag 	= explode("v=",$data["video_link"]);
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">

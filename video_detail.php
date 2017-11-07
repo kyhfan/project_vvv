@@ -14,7 +14,7 @@
 					<div class="desktop-layout big"></div>
 <?
 	include_once "./head_area.php";
-?>				
+?>
 					<div class="content detail">
 						<div class="wrapper">
 							<div class="video main">
@@ -47,44 +47,58 @@
 												</div>
 											</div>
 											<div class="action-group">
-												<div class="icon share">
-													<button type="button" onclick="alert('작업예정!')">
-														<span class="blind">공유하기</span>
-													</button>
-												</div>
+												<div class="inner">
+													<div class="icon share">
+														<button type="button" onclick="share_spread()">
+															<span class="blind">공유하기</span>
+														</button>
+													</div>
 <?
 	$like_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$_SESSION['ss_vvv_email']."' AND v_idx='".$idx."' AND like_flag='Y'";
 	$like_result	= mysqli_query($my_db, $like_query);
-	$like_count		= mysqli_num_rows($like_result);
-	
+
 	if ($_SESSION['ss_vvv_email'])
 	{
-		if ($like_count > 0)
+		if (mysqli_num_rows($like_result) > 0)
 		{
-?>						
-												<div class="icon liked">
+?>
+													<div class="icon liked">
 <?
 		}else{
-?>		
-												<div class="icon like">
+?>
+													<div class="icon like">
 <?
 		}
-?>				
-													<button type="button" onclick="like_video('<?=$idx?>')" id="like_img">
-														<span class="blind">좋아요</span>
-													</button>
-												</div>
+?>
+														<button type="button" onclick="like_video('<?=$idx?>')" id="like_img">
+															<span class="blind">좋아요</span>
+														</button>
+													</div>
 <?
 	}else{
-?>		
-												<div class="icon like">
-													<button type="button" onclick="alert('로그인 후 이용해 주세요.');location.href='login.php?refurl=video_detail.php?idx=<?=$idx?>';" id="like_img">
-														<span class="blind">좋아요</span>
-													</button>
-												</div>
+?>
+													<div class="icon like">
+														<button type="button" onclick="alert('로그인 후 이용해 주세요.');location.href='login.php?refurl=video_detail.php?idx=<?=$idx?>';" id="like_img">
+															<span class="blind">좋아요</span>
+														</button>
+													</div>
 <?
 	}
-?>										
+?>
+													<div class="spread">
+														<div class="wrapper">
+															<button type="button" class="lk">
+																<span class="blind">링크로 공유</span>
+															</button>
+															<button type="button" class="kt">
+																<span class="blind">카카오톡으로 공유</span>
+															</button>
+															<button type="button" class="fb">
+																<span class="blind">페이스북으로 공유</span>
+															</button>
+														</div>
+													</div>
+												</div>
 											</div>
 										</figcaption>
 									</figure>
@@ -97,14 +111,14 @@
 	$related_count 		= mysqli_num_rows($related_result);
 	if ($related_count > 0)
 	{
-?>							
+?>
 							<div class="grid related">
 								<h5 class="tt">관련 영상</h5>
 								<div class="row">
 <?
 		while ($related_data = mysqli_fetch_array($related_result))
 		{
-?>									
+?>
 									<div class="d-col-4 m-col-1">
 										<figure>
 											<a href="javascript:void(0)" class="clearfix">
@@ -140,12 +154,12 @@
 									</div>
 <?
 		}
-?>									
+?>
 								</div>
 							</div>
 <?
 	}
-?>							
+?>
 							<div class="rep-area">
 								<h5 class="tt">
 									댓글
@@ -155,15 +169,15 @@
 <?
 	if ($_SESSION['ss_vvv_email'])
 	{
-?>									
+?>
 									<button type="button" onclick="ins_comment('<?=$data['idx']?>')">
 <?
 	}else{
-?>		
+?>
 									<button type="button" onclick="alert('로그인 후 이용해 주세요.');location.href='login.php?refurl=video_detail.php?idx=<?=$idx?>';">
 <?
 	}
-?>							
+?>
 										<span>등록</span>
 									</button>
 								</div>
@@ -175,7 +189,7 @@
 
 	while ($comment_data = mysqli_fetch_array($comment_result))
 	{
-?>										
+?>
 										<li>
 											<span class="name">
 												<a href="my_vvv.php?email=<?=$comment_data["mb_email"]?>"><?=$comment_data["mb_name"]?></a>
@@ -189,7 +203,7 @@
 										</li>
 <?
 	}
-?>										
+?>
 									</ul>
 								</div>
 							</div>
@@ -209,11 +223,11 @@
 <?
 	if ($gubun == "MOBILE")
 	{
-?>		
+?>
 		<script type="text/javascript" src="./js/m_main.js"></script>
 <?
 	}else{
-?>		
+?>
 		<script type="text/javascript" src="./js/main.js"></script>
 <?
 	}
@@ -227,7 +241,7 @@
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 	var player;
-	
+
 	if ($(window).width() < 1040)
 	{
 		var yt_width = $(window).width();
@@ -235,7 +249,7 @@
 	}else{
 		var yt_width = '1040';
 		var yt_height = '582';
-	}		
+	}
 
 	function onYouTubeIframeAPIReady() {
 		player = new YT.Player('video_area', {
@@ -270,7 +284,7 @@
 						}
 					}
 				});
-			}			
+			}
 		}else if (event.data == 2){
 			play_flag = 1;
 		}
@@ -280,7 +294,7 @@
     {
         if (media == "fb")
         {
-    
+
             var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.valuable-viral-video.com/video_detail.php?idx=<?=$idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
             $.ajax({
                 type   : "POST",
@@ -317,7 +331,7 @@
             });
         }
 	}
-	
+
 	function like_video(v_idx)
 	{
 		$.ajax({
@@ -339,10 +353,12 @@
 					$("#like_count").html($("#like_count").html() - 1);
 				}
 			}
-		});			
+		});
 	}
-
-	
+	function share_spread()
+	{
+		$('.action-group .spread').toggleClass('active');
+	}
 	</script>
 	</body>
 </html>

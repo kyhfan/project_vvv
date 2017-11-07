@@ -465,6 +465,9 @@ figure figcaption .other div span:last-child {
 	right: 15px;
 	font-size: 0;
 }
+.video.main figcaption .action-group > .inner {
+	position: relative;
+}
 .video.main figcaption .action-group .icon {
 	display: inline-block;
 	width: 26px;
@@ -489,9 +492,48 @@ figure figcaption .other div span:last-child {
 .video.main figcaption .action-group .liked button {
 	background: url(../images/icon_like_active.png) center center / cover no-repeat;
 }
-/* .video.main figcaption .action-group .like button:hover {
-	background: url(../images/icon_like_active.png) center center / cover no-repeat;
-} */
+.video.main figcaption .action-group .spread {
+	position: absolute;
+	top: -1px;
+	left: -93px;
+	opacity: 0;
+	visibility: hidden;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.video.main figcaption .action-group .spread.active {
+	opacity: 1;
+	visibility: visible;
+}
+.video.main figcaption .action-group .spread .wrapper {
+	background: #6aba4e;
+	border-radius: 3px;
+	position: relative;
+}
+.video.main figcaption .action-group .spread .wrapper::after {
+	content: "";
+	position: absolute;
+	top: 12px;
+	right: -4px;
+	background: url(../images/share_polygon.png) center center / cover no-repeat;
+	width: 5px;
+	height: 5px;
+}
+.video.main figcaption .action-group .spread .wrapper button {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+}
+.video.main figcaption .action-group .spread .wrapper .lk {
+	background: url(../images/share_in_url.png) center center / 10px 10px no-repeat;
+}
+.video.main figcaption .action-group .spread .wrapper .kt {
+	background: url(../images/share_in_kt.png) center center / 11px 10px no-repeat;
+}
+.video.main figcaption .action-group .spread .wrapper .fb {
+	background: url(../images/share_in_fb.png) center center / 6px 11px no-repeat;
+}
+
 .detail .divide-block {
 	width: 100vw;
 	background: #f2f2f2;
@@ -988,6 +1030,41 @@ figure figcaption .other div span:last-child {
 	.video.main figcaption .action-group .like button:hover {
 		background: url(../images/icon_like_active.png) center center / cover no-repeat;
 	}
+	.video.main figcaption .action-group .spread {
+		position: absolute;
+		top: 1px;
+		left: -135px;
+	}
+	.video.main figcaption .action-group .spread .wrapper {
+		background: #6aba4e;
+		border-radius: 5px;
+		position: relative;
+	}
+	.video.main figcaption .action-group .spread .wrapper::after {
+		content: "";
+		position: absolute;
+		top: 25px;
+		right: -4px;
+		background: url(../images/share_polygon.png) center center / cover no-repeat;
+		width: 5px;
+		height: 5px;
+	}
+	.video.main figcaption .action-group .spread .wrapper button {
+		display: inline-block;
+		width: 56px;
+		height: 56px;
+	}
+	.video.main figcaption .action-group .spread .wrapper .lk {
+		background: url(../images/share_in_url.png) center center / 20px 20px no-repeat;
+	}
+	.video.main figcaption .action-group .spread .wrapper .kt {
+		display: none;
+		background: url(../images/share_in_kt.png) center center / 22px 20px no-repeat;
+	}
+	.video.main figcaption .action-group .spread .wrapper .fb {
+		background: url(../images/share_in_fb.png) center center / 12px 23px no-repeat;
+	}
+
 	.detail .divide-block {
 		width: 100vw;
 		background: #f2f2f2;

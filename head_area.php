@@ -15,16 +15,16 @@
 ?>
 											<a href="login.php">
 												<span>LOGIN</span>
-                                            </a>
+											</a>
 <?
-    }else{
-?>        
+	}else{
+?>
 											<a href="logout.php">
 												<span>LOGOUT</span>
-                                            </a>
+											</a>
 <?
-    }
-?>                                    
+	}
+?>
 										</li>
 										<li>
 											<a href="my_vvv.php">
@@ -44,12 +44,12 @@
 									</div>
 									<div class="mobile-layout">
 <?
-    if (strpos(basename($_SERVER['PHP_SELF']),"video_detail.php") !== false)
-        $stop_flag    = "player.stopVideo();";
-    else
-        $stop_flag    = "";
-    
-?>                                    
+	if (strpos(basename($_SERVER['PHP_SELF']),"video_detail.php") !== false)
+		$stop_flag    = "player.stopVideo();";
+	else
+		$stop_flag    = "";
+
+?>
 										<button onclick="<?=$stop_flag?>clearSearch();">
 											<span class="blind">검색</span>
 											<span class="icon-search"></span>
