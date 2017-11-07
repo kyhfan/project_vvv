@@ -268,7 +268,7 @@
 	var play_flag = 0;
 	function onPlayerStateChange(event) {
 		if (event.data == 1)
-		{ㅇ
+		{
 			if (play_flag == 0)
 			{
 				$.ajax({
