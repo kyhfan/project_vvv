@@ -17,7 +17,7 @@
 				$mb_kakao_email_verified = "Y";
 			else
 				$mb_kakao_email_verified = "N";
-			
+
 			$login_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_email='".$mb_email."' AND mb_kakao_way_id='".$mb_kakao_way_id."'";
 			$login_result		= mysqli_query($my_db, $login_query);
 			$login_data			= mysqli_fetch_array($login_result);
@@ -35,7 +35,7 @@
 			$_SESSION['ss_vvv_email']		= $mb_email;
 			$_SESSION['ss_vvv_name']		= $mb_kakao_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
-			
+
 			if ($result)
 				$flag	= "Y";
 			else
@@ -52,7 +52,7 @@
 			$mb_facebook_gender			= $_REQUEST["gender"];
 			$mb_facebook_birthday		= $_REQUEST["birthday"];
 			$mb_facebook_way_id			= $_REQUEST["id"];
-			
+
 			$login_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_email='".$mb_email."' AND mb_facebook_way_id='".$mb_facebook_way_id."'";
 			$login_result		= mysqli_query($my_db, $login_query);
 			$login_data			= mysqli_fetch_array($login_result);
@@ -70,7 +70,7 @@
 			$_SESSION['ss_vvv_email']		= $mb_email;
 			$_SESSION['ss_vvv_name']		= $mb_facebook_name;
 			$_SESSION['ss_vvv_way']			= $mb_login_way;
-			
+
 			if ($result)
 				$flag	= "Y";
 			else
@@ -127,7 +127,7 @@
 		case "insert_comment" :
 			$v_idx			= $_REQUEST["idx"];
 			$comment_text	= $_REQUEST["comment_text"];
-		
+
 			$query		= "INSERT INTO ".$_gl['comment_info_table']."(v_idx, mb_email, mb_name, comment_text, comment_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_name']."','".$comment_text."','".date("Y-m-d H:i:s")."')";
 			$result		= mysqli_query($my_db, $query);
 
@@ -137,5 +137,22 @@
 				$flag	= "N";
 
 			echo $flag;
+		break;
+
+		case "insert_share_info" :
+			$sns_media		= $_REQUEST['sns_media'];
+			$sns_flag		= $_REQUEST['sns_flag'];
+
+			$query 		= "INSERT INTO ".$_gl['share_info_table']."(sns_media, sns_gubun, sns_ipaddr, sns_email, inner_media, sns_regdate) values('".$sns_media."','".$gubun."','".$_SERVER['REMOTE_ADDR']."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_media']."','".date("Y-m-d H:i:s")."')";
+			$result 	= mysqli_query($my_db, $query);
+
+			if($result) {
+				$flag = "Y";
+			}else{
+				$flag = "N";
+			}
+
+			echo $flag;
+		break;
 	}
 ?>

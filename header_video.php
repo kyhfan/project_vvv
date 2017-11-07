@@ -48,4 +48,9 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-NH7CPGH');</script>
 		<!-- End Google Tag Manager -->
+		<!-- kakao init -->
+		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+		<script>
+			Kakao.init('ff013671b5f7b01d59770657a8787952');
+		</script>
 	</head>

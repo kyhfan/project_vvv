@@ -87,13 +87,13 @@
 ?>
 													<div class="spread">
 														<div class="wrapper">
-															<button type="button" class="lk">
+															<button type="button" class="clipboardBtn lk" onclick="sns_share('lk')" data-clipboard-text="http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>" data-toggle="tooltip" title="Copied!">
 																<span class="blind">링크로 공유</span>
 															</button>
-															<button type="button" class="kt">
+															<button type="button" class="kt" onclick="sns_share('kt')">
 																<span class="blind">카카오톡으로 공유</span>
 															</button>
-															<button type="button" class="fb">
+															<button type="button" class="fb" onclick="sns_share('fb')">
 																<span class="blind">페이스북으로 공유</span>
 															</button>
 														</div>
@@ -220,6 +220,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="./js/TweenMax.js"></script>
+		<!-- clipboard.js -->
+		<script src="./lib/clipboard.js-master/dist/clipboard.min.js"></script>
 <?
 	if ($gubun == "MOBILE")
 	{
@@ -234,11 +236,11 @@
 ?>
 	<script type="text/javascript">
 	// 유튜브 api 재생 클릭시 이벤트 설정
-    var tag = document.createElement('script');
+	var tag = document.createElement('script');
 
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 	var player;
 
@@ -253,20 +255,20 @@
 
 	function onYouTubeIframeAPIReady() {
 		player = new YT.Player('video_area', {
-        	height: yt_height,
-        	width: yt_width,
-        	videoId: '<?=$yt_flag[1]?>',
-        	events: {
-            	// 'onReady': onPlayerReady,
-            	'onStateChange': onPlayerStateChange
-          	}
-        });
+			height: yt_height,
+			width: yt_width,
+			videoId: '<?=$yt_flag[1]?>',
+			events: {
+				// 'onReady': onPlayerReady,
+				'onStateChange': onPlayerStateChange
+			  }
+		});
 	}
 
 	var play_flag = 0;
-    function onPlayerStateChange(event) {
+	function onPlayerStateChange(event) {
 		if (event.data == 1)
-		{
+		{ㅇ
 			if (play_flag == 0)
 			{
 				$.ajax({
@@ -288,48 +290,64 @@
 		}else if (event.data == 2){
 			play_flag = 1;
 		}
-    }
+	}
 
-    function sns_share(media, flag)
-    {
-        if (media == "fb")
-        {
+	function sns_share(media, flag)
+	{
+		if (media == "fb")
+		{
 
-            var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.valuable-viral-video.com/video_detail.php?idx=<?=$idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
-            $.ajax({
-                type   : "POST",
-                async  : false,
-                url    : "./main_exec.php",
-                data:{
-                    "exec"      : "insert_share_info",
-                    "sns_media" : media,
-                    "sns_flag"	: flag
-                }
-            });
-        }else{
-            Kakao.Link.sendTalkLink({
-            label: "|도|미|노|챌|린|지|\r\n\r\n무너지지 않는 도미노를 발견하면 핸드폰을 흔들어주세요!\r\n\r\n도미노야 어디한번 해보자!\r\n니가 무너지나 안 무너지나!",
-            image: {
-                src: 'http://valuable-viral-video.com/images/sns_share.jpg',
-                width: '1200',
-                height: '630'
-            },
-            webButton: {
-                text: "|도|미|노|챌|린|지|",
-                url: 'http://valuable-viral-video.com/index.php?media=kt' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-            }
-            });
-            $.ajax({
-                type   : "POST",
-                async  : false,
-                url    : "./main_exec.php",
-                data:{
-                    "exec"      : "insert_share_info",
-                    "sns_media" : media,
-                    "sns_flag"	: flag
-                }
-            });
-        }
+			var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.valuable-viral-video.com/video_detail.php?idx=<?=$idx?>'),'sharer','toolbar=0,status=0,width=600,height=325');
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./main_exec.php",
+				data:{
+					"exec"      : "insert_share_info",
+					"sns_media" : media,
+					"sns_flag"	: flag
+				}
+			});
+		} else if(media == "kt") {
+			Kakao.Link.sendTalkLink({
+				label: "카카오톡 영상공유 테스트 메시지",
+				image: {
+					src: 'https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg',
+					width: '1200',
+					height: '630'
+				},
+				webButton: {
+					text: "영상 보러 가기",
+					url: 'http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+				}
+			});
+			$.ajax({
+				type   : "POST",
+				async  : false,
+				url    : "./main_exec.php",
+				data:{
+					"exec"      : "insert_share_info",
+					"sns_media" : media,
+					"sns_flag"	: flag
+				},
+				success: function(res) {
+					console.log(res);
+				}
+			});
+		} else {
+			var clipboard = new Clipboard('.clipboardBtn');
+			clipboard.on('success', function(e) {
+				console.info('Action:', e.action);
+				console.info('Text:', e.text);
+				console.info('Trigger:', e.trigger);
+				$('.spread .lk').tooltip('show');
+				e.clearSelection();
+			});
+			clipboard.on('error', function(e) {
+			console.error('Action:', e.action);
+			console.error('Trigger:', e.trigger);
+			});
+		}
 	}
 
 	function like_video(v_idx)
