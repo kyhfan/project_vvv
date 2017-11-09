@@ -118,13 +118,13 @@
 <?
 		while ($related_data = mysqli_fetch_array($related_result))
 		{
-			$yt_flag 	= explode("v=",$related_data["video_link"]);	
+			$related_yt_flag 	= explode("v=",$related_data["video_link"]);	
 ?>
 									<div class="d-col-4 m-col-1">
 										<figure>
 											<a href="video_detail.php?idx=<?=$related_data["idx"]?>" class="clearfix">
 												<div class="thum">
-													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
+													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$related_yt_flag[1]?>/hqdefault.jpg);"></div>
 													<!-- <span class="total-time">0:34</span> -->
 												</div>
 												<figcaption>
