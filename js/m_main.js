@@ -58,7 +58,7 @@
 
 		function more_video()
 		{
-			video_pg = video_pg + 6;
+			video_pg = video_pg + 30;
 
 			$.ajax({
 				type   : "POST",
@@ -85,7 +85,7 @@
 
 		function more_search_video()
 		{
-			video_pg = video_pg + 6;
+			video_pg = video_pg + 30;
 			$.ajax({
 				type   : "POST",
 				async  : false,

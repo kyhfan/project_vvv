@@ -11,7 +11,7 @@
         $order_by = " ORDER BY idx DESC";
     else
         $order_by = " ORDER BY like_count DESC";
-	$view_pg            = 6;
+	$view_pg            = 30;
 	$s_page				= $video_pg;
 
 	if ($search_keyword != "")
@@ -53,7 +53,7 @@
 														</span> -->
 													</p>
 													<span class="publisher">
-														<?=mb_strimwidth($data["video_title"],0,40, '...', 'utf-8')?>
+														<?=mb_strimwidth($data["video_title"],0,32, '...', 'utf-8')?>
 													</span>
 													<div class="other">
 														<div class="play">
