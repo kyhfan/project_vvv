@@ -365,9 +365,11 @@
 				console.log(response);
 				if (response.match("Y") == "Y")
 				{
+					alert("Like 되었습니다!");
 					$(".icon.like").attr("class","icon liked");
 					$("#like_count").html(Number($("#like_count").html()) + 1);
 				}else{
+					alert("Like 에서 제외 되었습니다!");
 					$(".icon.liked").attr("class","icon like");
 					$("#like_count").html($("#like_count").html() - 1);
 				}
