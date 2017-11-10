@@ -5,7 +5,7 @@
 		var total_video_num 	= $("#total_video_num").val();
 		var total_page 			= $("#total_page").val();
 		var current_page        = 1;
-
+		var scroll_flag			= 0;
 		$(window).on('scroll', function() {
 			var $headerHeight = document.getElementById('header').height || $header.height();
 			var currentScroll = $(this).scrollTop();
@@ -15,16 +15,20 @@
 				$vvv.removeClass('scrolled');
 			}
 
-			var bodyScroll	= currentScroll + $(window).height();
+			var bodyScroll		= currentScroll + $(window).height();
+			var documentScroll	= document.body.scrollHeight -100;
 			console.log(bodyScroll + "||" + document.body.scrollHeight);
-			if(bodyScroll == document.body.scrollHeight)
+			if(bodyScroll > documentScroll)
 			{
-				console.log("end");
-				if ($("#search_keyword").html() == "")
-					more_video();
-				else
-					more_search_video();
-
+				if (scroll_flag == 0)
+				{
+					// console.log("end");
+					scroll_flag	= 1;
+					if ($("#search_keyword").html() == "")
+						more_video();
+					else
+						more_search_video();
+				}
 			}
 			// console.log(currentScroll);
 		});
@@ -54,7 +58,7 @@
 
 		function more_video()
 		{
-			video_pg = video_pg + 6;
+			video_pg = video_pg + 30;
 
 			$.ajax({
 				type   : "POST",
@@ -67,7 +71,6 @@
 					"sort_val"				: sort_val
 				},
 				success: function(response){
-					console.log(response);
 					res_arr	= response.split("||");
 					current_page = current_page + 1;
 					// if (current_page >= total_page)
@@ -75,13 +78,14 @@
 					// else
 					// 	$("#main_more").show();
 					$("#main_area").append(res_arr[1]);
+					scroll_flag = 1;
 				}
 			});
 		}
 
 		function more_search_video()
 		{
-			video_pg = video_pg + 6;
+			video_pg = video_pg + 30;
 			$.ajax({
 				type   : "POST",
 				async  : false,
@@ -102,6 +106,7 @@
 					// else
 					// 	$("#search_more").show();
 					$("#search_area").append(res_arr[1]);
+					scroll_flag = 1;
 				}
 			});
 		}
@@ -207,7 +212,6 @@
 					"comment_text"          : comment_text
 				},
 				success: function(response){
-					console.log(response);
 					if (response.match("Y") == "Y")
 					{
 						alert("덧글이 입력되었습니다.");

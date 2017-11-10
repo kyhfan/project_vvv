@@ -118,13 +118,14 @@
 <?
 		while ($related_data = mysqli_fetch_array($related_result))
 		{
+			$related_yt_flag 	= explode("v=",$related_data["video_link"]);	
 ?>
 									<div class="d-col-4 m-col-1">
 										<figure>
-											<a href="javascript:void(0)" class="clearfix">
+											<a href="video_detail.php?idx=<?=$related_data["idx"]?>" class="clearfix">
 												<div class="thum">
-													<div class="thumnail-img" style="background-image:url(./images/grid_sample.jpg);"></div>
-													<span class="total-time">0:34</span>
+													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$related_yt_flag[1]?>/hqdefault.jpg);"></div>
+													<!-- <span class="total-time">0:34</span> -->
 												</div>
 												<figcaption>
 													<p>
@@ -271,7 +272,7 @@
 	var play_flag = 0;
 	function onPlayerStateChange(event) {
 		if (event.data == 1)
-		{ㅇ
+		{
 			if (play_flag == 0)
 			{
 				$.ajax({
@@ -367,9 +368,11 @@
 				console.log(response);
 				if (response.match("Y") == "Y")
 				{
+					alert("Like 되었습니다!");
 					$(".icon.like").attr("class","icon liked");
 					$("#like_count").html(Number($("#like_count").html()) + 1);
 				}else{
+					alert("Like 에서 제외 되었습니다!");
 					$(".icon.liked").attr("class","icon like");
 					$("#like_count").html($("#like_count").html() - 1);
 				}

@@ -40,7 +40,7 @@
 							<div class="grid">
 								<div class="row" id="main_area">
 <?
-	$view_pg            = 6;
+	$view_pg            = 30;
 	$s_page				= 0;
 	// 전체 상품 갯수
 	$query				= "SELECT * FROM ".$_gl['video_info_table']." WHERE showYN='Y'";
@@ -73,7 +73,7 @@
 														</span> -->
 													</p>
 													<span class="publisher">
-														<?=mb_strimwidth($data["video_title"],0,40, '...', 'utf-8')?>
+														<?=mb_strimwidth($data["video_title"],0,32, '...', 'utf-8')?>
 													</span>
 													<div class="other">
 														<div class="play">

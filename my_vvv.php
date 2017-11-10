@@ -1,14 +1,14 @@
 <?
 	include_once "./header.php";
 
-	// if (!$_SESSION['ss_vvv_email'])
-		// echo "<script>location.href='login.php';</script>";
-
 	if ($_REQUEST["email"])
 		$my_email	= $_REQUEST["email"];
 	else
 		$my_email	= $_SESSION['ss_vvv_email'];
-	
+
+	if (!$_SESSION['ss_vvv_email'] && $_REQUEST["email"] == "")
+		echo "<script>location.href='login.php';</script>";
+
 	$my_query		= "SELECT * FROM ".$_gl['like_info_table']." WHERE mb_email='".$my_email."' AND like_flag='Y'";
 	$my_result		= mysqli_query($my_db, $my_query);
 	$my_count		= mysqli_num_rows($my_result);
