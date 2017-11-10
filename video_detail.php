@@ -201,7 +201,7 @@
 											<span class="time">
 												2017-11-10 11:14
 											</span>
-											<a href="javascript:void(0)" class="report">
+											<a href="javascript:report_comment('<?=$comment_data['idx']?>');" class="report">
 												신고
 											</a>
 										</li>
@@ -382,6 +382,28 @@
 	function share_spread()
 	{
 		$('.action-group .spread').toggleClass('active');
+	}
+
+	function report_comment(idx)
+	{
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "./main_exec.php",
+			data:{
+				"exec"				    : "report_comment",
+				"c_idx"		            : idx
+			},
+			success: function(response){
+				console.log(response);
+				if (response.match("Y") == "Y")
+				{
+					alert("댓글 신고 처리 되었습니다. 삭제여부 운영자 검수 후 처리해 드리도록 하겠습니다. ");
+				}else{
+					alert("다시 시도해 주세요.");
+				}
+			}
+		});		
 	}
 	</script>
 	</body>

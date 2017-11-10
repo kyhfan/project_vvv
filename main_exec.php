@@ -154,5 +154,20 @@
 
 			echo $flag;
 		break;
+
+		case "report_comment" :
+			$c_idx		= $_REQUEST["c_idx"];
+
+			$query 		= "INSERT INTO ".$_gl['report_info_table']."(c_idx, reporter_email, reporter_ipaddr, report_regdate) values('".$c_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
+			$result 	= mysqli_query($my_db, $query);
+			
+			if($result) {
+				$flag = "Y";
+			}else{
+				$flag = "N";
+			}
+
+			echo $flag;
+		break;
 	}
 ?>
