@@ -197,6 +197,9 @@
 											<span class="msg">
 												<?=$comment_data["comment_text"]?>
 											</span>
+											<span class="time">
+												2017-11-10 11:14
+											</span>
 											<a href="javascript:void(0)" class="report">
 												신고
 											</a>

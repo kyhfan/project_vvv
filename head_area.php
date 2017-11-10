@@ -9,27 +9,13 @@
 								<div class="nav">
 									<ul class="clearfix">
 										<li>
-<?
-	if (!$_SESSION['ss_vvv_email'])
-	{
-?>
-											<a href="login.php">
-												<span>LOGIN</span>
+											<a href="index.php">
+												<span>ALL VVV</span>
 											</a>
-<?
-	}else{
-?>
-											<a href="logout.php">
-												<span>LOGOUT</span>
-											</a>
-<?
-	}
-?>
 										</li>
 										<li>
 											<a href="my_vvv.php">
 												<span>MY VVV</span>
-												<!-- <span></span> -->
 											</a>
 										</li>
 									</ul>
@@ -55,6 +41,24 @@
 											<span class="icon-search"></span>
 										</button>
 									</div>
+								</div>
+								<div class="member-status">
+<?
+	if (!$_SESSION['ss_vvv_email'])
+	{
+?>
+									<a href="login.php">
+										<span>LOGIN</span>
+									</a>
+<?
+	}else{
+?>
+									<a href="logout.php">
+										<span>LOGOUT</span>
+									</a>
+<?
+	}
+?>
 								</div>
 							</div>
 						</div>

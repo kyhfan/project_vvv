@@ -1,7 +1,9 @@
 body {
-	font-family: 'NanumSquare', sans-serif;
+	/*font-family: 'NanumSquare', sans-serif;*/
+	font-family: 'Noto Sans', sans-serif;
 	font-weight: 400;
-	line-height: 1;
+	/*line-height: 1;*/
+	line-height: 1.17;
 	color: #212121;
 }
 ul {
@@ -46,6 +48,7 @@ button {
 	appearance: none;
 	border: 0;
 	padding: 0;
+	border-radius: 0;
 }
 h1,h2,h3,h4,h5,h6,p {
 	margin: 0;
@@ -111,6 +114,16 @@ h1,h2,h3,h4,h5,h6,p {
 	bottom: 0;
 	right: 0;
 	padding-right: 9.5%;
+}
+#header .inner .member-status {
+	position: absolute;
+	top: -10px;
+	right: 0;
+}
+#header .inner .member-status span {
+	font-size: 10px;
+	color: #333333;
+	font-weight: 900;
 }
 #header .inner .nav ul li {
 	float: left;
@@ -606,6 +619,13 @@ figure figcaption .other div span:last-child {
 	color: #999999;
 	padding-top: 11px;
 }
+.detail .rep-area .rep-list ul li .time {
+	position: absolute;
+	top: 17px;
+	right: 7px;
+	color: #999999;
+	font-size: 12px;
+}
 .detail .rep-area .rep-list ul li .report {
 	display: block;
 	text-decoration: underline;
@@ -746,6 +766,14 @@ figure figcaption .other div span:last-child {
 	#header .inner .nav {
 		position: absolute;
 	}
+	#header .inner .member-status span {
+		font-size: 17px;
+		color: #333333;
+		font-weight: 900;
+	}
+	#header .inner .member-status a:hover span::after {
+		width: 100%;
+	}
 	#header .inner .nav ul {
 		float: left;
 		margin-right: 180px;
@@ -754,13 +782,14 @@ figure figcaption .other div span:last-child {
 		padding-right: 60px;
 	}
 	#header .inner .nav ul li a span {
-		font-size: 24px;
+		font-size: 22px;
 		font-weight: 900;
 	}
 	#header .inner .nav ul li a:hover span {
 		color: #212121;
 	}
-	#header .inner .nav ul li a span::after {
+	#header .inner .nav ul li a span::after,
+	#header .inner .member-status a span::after {
 		content: "";
 		position: absolute;
 		left: 0;
@@ -784,7 +813,7 @@ figure figcaption .other div span:last-child {
 		display: block;
 		width: 237px;
 		position: absolute;
-		top: -18px;
+		top: -15px;
 		right: 0;
 	}
 	#header .inner .nav .desktop-layout .input-box {
@@ -792,8 +821,8 @@ figure figcaption .other div span:last-child {
 	}
 	#header .inner .nav .desktop-layout .input-box input[type="text"] {
 		color: #000000;
-		font-size: 21px;
-		padding: 10px 33px 10px 6px;
+		font-size: 20px;
+		padding: 10px 33px 5px 6px;
 		line-height: 0;
 	}
 	#header .inner .nav .desktop-layout .input-box button {
@@ -889,7 +918,7 @@ figure figcaption .other div span:last-child {
 		padding: 60px 0;
 	}
 	.sorting a {
-		font-size: 26px;
+		font-size: 22px;
 		font-weight: 700;
 	}
 	.sorting a:hover::after {
