@@ -173,9 +173,9 @@
 			echo $flag;
 		break;
 		case "request_translate" :
-			$t_idx		= $_REQUEST["t_idx"];
+			$v_idx		= $_REQUEST["v_idx"];
 
-			$query 		= "INSERT INTO ".$_gl['tranlate_info_table']."(t_idx, requester_email, requester_ipaddr, request_regdate) values('".$t_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
+			$query 		= "INSERT INTO ".$_gl['tranlate_info_table']."(v_idx, requester_email, requester_ipaddr, request_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
 			$result 	= mysqli_query($my_db, $query);
 
 			if($result) {

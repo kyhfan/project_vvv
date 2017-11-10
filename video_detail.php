@@ -436,7 +436,7 @@
 			url    : "./main_exec.php",
 			data:{
 				"exec"				    : "request_translate",
-				"t_idx"		            : v_idx
+				"v_idx"		            : v_idx
 			},
 			success: function(response){
 				console.log(response);
