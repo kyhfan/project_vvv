@@ -78,12 +78,27 @@
 															<span class="blind">좋아요</span>
 														</button>
 													</div>
+													<div class="button trans">
+														<!-- 현재 영상이 번역이 된 영상인지 검증 필요. -->
+														<button type="button" onclick="request_translate('<?=$idx?>')">
+															<span>
+																번역신청
+															</span>
+														</button>
+													</div>
 <?
 	}else{
 ?>
 													<div class="icon like">
 														<button type="button" onclick="alert('로그인 후 이용해 주세요.');location.href='login.php?refurl=video_detail.php?idx=<?=$idx?>';" id="like_img">
 															<span class="blind">좋아요</span>
+														</button>
+													</div>
+													<div class="button trans">
+														<button type="button" onclick="alert('로그인 후 이용해 주세요.');location.href='login.php?refurl=video_detail.php?idx=<?=$idx?>';">
+															<span>
+																번역신청
+															</span>
 														</button>
 													</div>
 <?
@@ -392,7 +407,7 @@
 		$('.action-group .spread').toggleClass('active');
 	}
 
-	function report_comment(idx)
+	function report_comment(v_idx)
 	{
 		$.ajax({
 			type   : "POST",
@@ -411,7 +426,28 @@
 					alert("다시 시도해 주세요.");
 				}
 			}
-		});		
+		});
+	}
+	function request_translate(v_idx)
+	{
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "./main_exec.php",
+			data:{
+				"exec"				    : "request_translate",
+				"t_idx"		            : v_idx
+			},
+			success: function(response){
+				console.log(response);
+				if (response.match("Y") == "Y")
+				{
+					alert("번역 요청이 접수 되었습니다. 번역이 완료되면 이메일로 알려드리겠습니다.");
+				}else{
+					alert("다시 시도해 주세요.");
+				}
+			}
+		});
 	}
 	</script>
 	</body>

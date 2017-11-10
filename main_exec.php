@@ -163,7 +163,21 @@
 
 			$query 		= "INSERT INTO ".$_gl['report_info_table']."(c_idx, reporter_email, reporter_ipaddr, report_regdate) values('".$c_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
 			$result 	= mysqli_query($my_db, $query);
-			
+
+			if($result) {
+				$flag = "Y";
+			}else{
+				$flag = "N";
+			}
+
+			echo $flag;
+		break;
+		case "request_translate" :
+			$t_idx		= $_REQUEST["t_idx"];
+
+			$query 		= "INSERT INTO ".$_gl['tranlate_info_table']."(t_idx, requester_email, requester_ipaddr, request_regdate) values('".$t_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
+			$result 	= mysqli_query($my_db, $query);
+
 			if($result) {
 				$flag = "Y";
 			}else{
