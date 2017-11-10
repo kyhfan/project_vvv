@@ -117,7 +117,7 @@ h1,h2,h3,h4,h5,h6,p {
 }
 #header .inner .member-status {
 	position: absolute;
-	top: -10px;
+	top: -12px;
 	right: 0;
 }
 #header .inner .member-status span {
@@ -292,9 +292,11 @@ h1,h2,h3,h4,h5,h6,p {
 figure figcaption .other div {
 	display: inline-block;
 	font-size: 15px;
+	margin-right: 3px;
 }
-figure figcaption .other .play {
-	margin-right: 5px;
+figure figcaption .other div:last-child {
+	margin-left: 2px;
+	margin-right: 0;
 }
 figure figcaption .other .play span:first-child {
 	color: #6aba4e;
@@ -302,11 +304,18 @@ figure figcaption .other .play span:first-child {
 figure figcaption .other .like span:first-child {
 	color: #dd2c50;
 }
+figure figcaption .other .comment span:first-child {
+	font-size: 14px;
+	color: #f7dd30;
+	position: relative;
+	top: 2px;
+	margin-right: 1px;
+}
 figure figcaption .other div span {
 	display: inline-block;
 }
 figure figcaption .other div span:last-child {
-	margin-left: 1px;
+	margin-left: 2px;
 }
 .sorting {
 	text-align: center;
@@ -447,6 +456,7 @@ figure figcaption .other div span:last-child {
 	display: inline-block;
 	font-size: 15px;
 	color: #a9a9a9;
+	padding-top: 2px;
 }
 .video.main figcaption .other {
 	padding-top: 23px;
@@ -466,13 +476,33 @@ figure figcaption .other div span:last-child {
 	height: 26px;
 	position: relative;
 }
+.video.main figcaption .action-group .inner .button {
+	display: inline-block;
+	height: 24px;
+	vertical-align: bottom;
+	margin-right: 0;
+}
+.video.main figcaption .action-group .button button {
+	display: block;
+	font-size: 11px;
+	color: #b7b7b7;
+	height: 100%;
+	padding: 0 5px;
+	line-height: 24px;
+	vertical-align: middle;
+	border: 1px solid #ededed;
+	border-radius: 3px;
+}
+.video.main figcaption .action-group .button button span {
+	vertical-align: middle;
+}
 .video.main figcaption .action-group .icon button {
 	display: block;
 	width: 100%;
 	height: 100%;
 	font-size: 10px;
 }
-.video.main figcaption .action-group .share {
+.video.main figcaption .action-group .inner > div {
 	margin-right: 9px;
 }
 .video.main figcaption .action-group .share button {
@@ -1040,20 +1070,42 @@ figure figcaption .other div span:last-child {
 		right: 0;
 		font-size: 0;
 	}
+	.video.main figcaption .action-group .inner > div {
+		margin-right: 15px;
+	}
 	.video.main figcaption .action-group .icon {
 		display: inline-block;
 		width: 60px;
 		height: 59px;
 		position: relative;
 	}
+	.video.main figcaption .action-group .inner .button {
+		display: inline-block;
+		height: 57px;
+		vertical-align: bottom;
+		margin-right: 0;
+	}
+	.video.main figcaption .action-group .inner .button:hover button {
+		color: #ffffff;
+		background: #dd2c50;
+		border: 1px solid transparent;
+	}
+	.video.main figcaption .action-group .button button {
+		display: block;
+		font-size: 18px;
+		color: #b7b7b7;
+		height: 100%;
+		padding: 0 20px;
+		line-height: 57px;
+		vertical-align: middle;
+		border: 1px solid #ededed;
+		border-radius: 6px;
+	}
 	.video.main figcaption .action-group .icon button {
 		display: block;
 		width: 100%;
 		height: 100%;
 		font-size: 10px;
-	}
-	.video.main figcaption .action-group .share {
-		margin-right: 14px;
 	}
 	.video.main figcaption .action-group .share button:hover {
 		background: url(../images/icon_share_active.png) center center / cover no-repeat;

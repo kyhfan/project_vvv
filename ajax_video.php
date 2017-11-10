@@ -33,8 +33,8 @@
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
-		$yt_flag 	= explode("v=",$data["video_link"]);	
-?>									
+		$yt_flag 	= explode("v=",$data["video_link"]);
+?>
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="video_detail.php?idx=<?=$data["idx"]?>">
@@ -64,6 +64,10 @@
 															<span>♥</span>
 															<span><?=number_format($data["like_count"])?></span>
 														</div>
+														<div class="comment">
+															<span class="glyphicon glyphicon-comment"></span>
+															<span><?=number_format($data["comment_count"])?></span>
+														</div>
 													</div>
 												</figcaption>
 											</a>
@@ -72,4 +76,4 @@
 <?
 	}
 	echo "||".$all_page;
-?>									
+?>

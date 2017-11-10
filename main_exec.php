@@ -131,6 +131,9 @@
 			$query		= "INSERT INTO ".$_gl['comment_info_table']."(v_idx, mb_email, mb_name, comment_text, comment_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SESSION['ss_vvv_name']."','".$comment_text."','".date("Y-m-d H:i:s")."')";
 			$result		= mysqli_query($my_db, $query);
 
+			$query2		= "UPDATE ".$_gl['video_info_table']." SET comment_count=comment_count+1 WHERE idx='".$v_idx."'";
+			$result2	= mysqli_query($my_db, $query2);
+
 			if ($result)
 				$flag	= "Y";
 			else

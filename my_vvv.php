@@ -34,19 +34,19 @@
 <?
 	if ($_SESSION['ss_vvv_email'] == $my_email)
 	{
-?>									
+?>
 									<span class="name"><?=$_SESSION['ss_vvv_name']?></span>님 반갑습니다
 <?
 	}else{
 		$member_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_email='".$my_email."'";
 		$member_result		= mysqli_query($my_db, $member_query);
 		$member_data		= mysqli_fetch_array($member_result);
-	
-?>		
+
+?>
 									<span class="name"><?=$member_data['mb_name']?></span>님의 LIKE 입니다
 <?
 	}
-?>							
+?>
 								</p>
 							</div>
 							<div class="sorting">
@@ -67,8 +67,8 @@
 		$video_query		= "SELECT * FROM ".$_gl['video_info_table']." WHERE idx='".$data['v_idx']."'";
 		$video_result		= mysqli_query($my_db, $video_query);
 		$video_data			= mysqli_fetch_array($video_result);
-		$yt_flag 			= explode("v=",$video_data["video_link"]);	
-?>									
+		$yt_flag 			= explode("v=",$video_data["video_link"]);
+?>
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="video_detail.php?idx=<?=$video_data["idx"]?>">
@@ -96,6 +96,10 @@
 															<span>♥</span>
 															<span><?=number_format($video_data["like_count"])?></span>
 														</div>
+														<div class="comment">
+															<span class="glyphicon glyphicon-comment"></span>
+															<span><?=number_format($data["comment_count"])?></span>
+														</div>
 													</div>
 												</figcaption>
 											</a>
@@ -104,7 +108,7 @@
 <?
 	}
 	$total_page			= ceil($total_video_num / $view_pg);
-?>									
+?>
 <input type="hidden" id="total_video_num" value="<?=$my_count?>">
 <input type="hidden" id="total_page" value="<?=$total_page?>">
 								</div>
@@ -112,7 +116,7 @@
 <?
 	if ($total_page > 1)
 	{
-?>							
+?>
 							<div class="more-cnt" id="main_more">
 								<a href="javascript:void(0)" onclick="more_video()">
 									<span class="blind">more</span>
@@ -120,7 +124,7 @@
 							</div>
 <?
 	}
-?>							
+?>
 						</div>
 					</div>
 <?
@@ -137,11 +141,11 @@
 <?
 	if ($gubun == "MOBILE")
 	{
-?>		
+?>
 		<script type="text/javascript" src="./js/m_main.js"></script>
 <?
 	}else{
-?>		
+?>
 		<script type="text/javascript" src="./js/main.js"></script>
 <?
 	}
