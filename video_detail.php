@@ -45,6 +45,10 @@
 													<span>♥</span>
 													<span id="like_count"><?=number_format($data["like_count"])?></span>
 												</div>
+												<div class="comment">
+													<span class="glyphicon glyphicon-comment"></span>
+													<span><?=number_format($data["comment_count"])?></span>
+												</div>
 											</div>
 											<div class="action-group">
 												<div class="inner">
@@ -118,7 +122,7 @@
 <?
 		while ($related_data = mysqli_fetch_array($related_result))
 		{
-			$related_yt_flag 	= explode("v=",$related_data["video_link"]);	
+			$related_yt_flag 	= explode("v=",$related_data["video_link"]);
 ?>
 									<div class="d-col-4 m-col-1">
 										<figure>
@@ -147,6 +151,10 @@
 														<div class="like">
 															<span>♥</span>
 															<span><?=number_format($related_data["like_count"])?></span>
+														</div>
+														<div class="comment">
+															<span class="glyphicon glyphicon-comment"></span>
+															<span><?=number_format($data["comment_count"])?></span>
 														</div>
 													</div>
 												</figcaption>

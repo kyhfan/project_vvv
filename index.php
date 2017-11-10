@@ -12,7 +12,7 @@
 					<div class="desktop-layout big"></div>
 <?
 	include_once "./head_area.php";
-?>				
+?>
 					<div class="content main">
 						<div class="wrapper">
 							<div class="banner big mobile-layout">
@@ -53,8 +53,8 @@
 	$i = 0;
 	while ($data = mysqli_fetch_array($result))
 	{
-		$yt_flag 	= explode("v=",$data["video_link"]);	
-?>									
+		$yt_flag 	= explode("v=",$data["video_link"]);
+?>
 									<div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="video_detail.php?idx=<?=$data["idx"]?>">
@@ -84,6 +84,10 @@
 															<span>♥</span>
 															<span><?=number_format($data["like_count"])?></span>
 														</div>
+														<div class="comment">
+															<span class="glyphicon glyphicon-comment"></span>
+															<span><?=number_format($data["comment_count"])?></span>
+														</div>
 													</div>
 												</figcaption>
 											</a>
@@ -99,7 +103,7 @@
 <?
 	if ($total_page > 1)
 	{
-?>							
+?>
 							<div class="more-cnt" id="main_more">
 								<a href="javascript:void(0)" onclick="more_video()">
 									<span class="blind">more</span>
@@ -107,7 +111,7 @@
 							</div>
 <?
 	}
-?>							
+?>
 						</div>
 					</div>
 <?
@@ -124,11 +128,11 @@
 <?
 	if ($gubun == "MOBILE")
 	{
-?>		
+?>
 		<script type="text/javascript" src="./js/m_main.js"></script>
 <?
 	}else{
-?>		
+?>
 		<script type="text/javascript" src="./js/main.js"></script>
 <?
 	}
