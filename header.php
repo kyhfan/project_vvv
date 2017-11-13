@@ -10,7 +10,7 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="VALUABLE VIRAL VIDEO">
 		<meta property="og:url" content="http://valuable-viral-video.com/index.php" />
-		<meta property="og:image" content="http://valuable-viral-video.com/images/sns_share_new.jpg" />
+		<meta property="og:image" content="http://valuable-viral-video.com/images/main_image.png" />
 		<meta property="og:description" content="가치있는 VIRAL VIDEO!">
 		<title>VVV</title>
 		<!-- 폰트 -->
