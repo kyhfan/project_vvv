@@ -23,7 +23,7 @@
 		<meta property="og:url" content="http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>" />
 		<meta property="og:image" content="https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg" />
 		<meta property="og:description" content="<?=$data["video_title"]?>">
-		<title>VVV</title>
+		<title>Valuable Viral Video - <?=$data["video_company"]?></title>
 		<!-- 폰트 -->
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 		<!-- <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> -->
