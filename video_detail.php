@@ -21,7 +21,7 @@
 								<div class="inner">
 									<figure>
 										<div class="vid-layer"  id="video_area">
-											<img src="./images/loading.jpg">
+											<img src="./images/loading.jpg" alt="로딩 이미지">
 										</div>
 										</a>
 										<figcaption>
