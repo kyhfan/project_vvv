@@ -17,6 +17,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="VALUABLE VIRAL VIDEO!">
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="<?=$data["video_company"]?>">
 		<meta property="og:url" content="http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>" />

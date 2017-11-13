@@ -7,11 +7,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="VALUABLE VIRAL VIDEO!">
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="VALUABLE VIRAL VIDEO">
 		<meta property="og:url" content="http://valuable-viral-video.com/index.php" />
 		<meta property="og:image" content="http://valuable-viral-video.com/images/main_image.png" />
-		<meta property="og:description" content="가치있는 VIRAL VIDEO!">
+		<meta property="og:description" content="VALUABLE VIRAL VIDEO!">
 		<title>VVV</title>
 		<!-- 폰트 -->
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
