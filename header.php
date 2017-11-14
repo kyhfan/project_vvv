@@ -13,7 +13,7 @@
 		<meta property="og:url" content="http://valuable-viral-video.com/index.php" />
 		<meta property="og:image" content="http://valuable-viral-video.com/images/main_image.png" />
 		<meta property="og:description" content="VALUABLE VIRAL VIDEO!">
-		<title>Valuable Viral Video - 가치있는 바이럴 비디오</title>
+		<title>Valuable Viral Video - 가치있는 바이럴 영상</title>
 		<!-- 폰트 -->
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 		<!-- <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> -->
