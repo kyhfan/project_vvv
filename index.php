@@ -59,7 +59,12 @@
 										<figure>
 											<a href="video_detail.php?idx=<?=$data["idx"]?>">
 												<div class="thum">
-													<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
+													<div class="highlight">
+														<div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div>
+														<!-- <img src="./images/grid_sample.jpg"> -->
+														<!-- <span class="total-time">0:34</span> -->
+													</div>
+													<!-- <div class="thumnail-img" style="background-image:url(https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg);"></div> -->
 													<!-- <img src="./images/grid_sample.jpg"> -->
 													<!-- <span class="total-time">0:34</span> -->
 												</div>
