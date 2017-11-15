@@ -338,6 +338,7 @@ figure figcaption .other div span:last-child {
 	bottom: -2px;
 	left: -3%;
 	background: #6aba4e;
+	transition: all 0.2s ease-in-out;
 }
 .sorting a.active::after {
 	width: 105%;
@@ -827,8 +828,11 @@ figure figcaption .other div span:last-child {
 		width: 0;
 		height: 1px;
 		background: #212121;
-		-webkit-transition: width 0.15s ease;
-		transition: width 0.15s ease;
+		-webkit-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	#header .inner .member-status a span::after {
+		background: #333333;
 	}
 	#header .inner .nav ul li a:hover span::after {
 		width: 100%;
@@ -852,7 +856,7 @@ figure figcaption .other div span:last-child {
 	#header .inner .nav .desktop-layout .input-box input[type="text"] {
 		color: #000000;
 		font-size: 20px;
-		padding: 10px 33px 5px 6px;
+		padding: 10px 33px 4px 6px;
 		line-height: 0;
 	}
 	#header .inner .nav .desktop-layout .input-box button {
@@ -1100,12 +1104,14 @@ figure figcaption .other div span:last-child {
 		vertical-align: middle;
 		border: 1px solid #ededed;
 		border-radius: 6px;
+		transition: all 0.3s cubic-bezier(.19,.6,.7,.75);
 	}
 	.video.main figcaption .action-group .icon button {
 		display: block;
 		width: 100%;
 		height: 100%;
 		font-size: 10px;
+		transition: all 0.3s cubic-bezier(.19,.6,.7,.75);
 	}
 	.video.main figcaption .action-group .share button:hover {
 		background: url(../images/icon_share_active.png) center center / cover no-repeat;
