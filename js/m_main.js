@@ -29,6 +29,8 @@
 					else
 						more_search_video();
 				}
+			}else{
+				scroll_flag	= 0;				
 			}
 			// console.log(currentScroll);
 		});

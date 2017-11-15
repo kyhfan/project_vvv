@@ -18,14 +18,14 @@
 							<div class="banner big mobile-layout">
 								<div class="slide">
 									<a href="javascript:void(0)">
-										<img src="./images/main_banner_m.jpg">
+										<img src="./images/main_banner_m.jpg" alt="메인 배너 이미지">
 									</a>
 								</div>
 							</div>
 							<div class="banner big desktop-layout">
 								<div class="slide">
 									<a href="javascript:void(0)">
-										<img src="./images/main_banner_pc.jpg">
+										<img src="./images/main_banner_pc.jpg" alt="메인 배너 이미지">
 									</a>
 								</div>
 							</div>

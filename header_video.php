@@ -17,12 +17,13 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="<?=$data["video_title"]?>">
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="<?=$data["video_company"]?>">
 		<meta property="og:url" content="http://valuable-viral-video.com/video_detail.php?idx=<?=$idx?>" />
 		<meta property="og:image" content="https://img.youtube.com/vi/<?=$yt_flag[1]?>/hqdefault.jpg" />
 		<meta property="og:description" content="<?=$data["video_title"]?>">
-		<title>VVV</title>
+		<title>Valuable Viral Video - <?=$data["video_company"]?></title>
 		<!-- 폰트 -->
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 		<!-- <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> -->
@@ -32,6 +33,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<!-- 작업파일 -->
 		<link rel="stylesheet" href="./css/style.css">
+		<link type="image/icon" rel="shortcut icon" href="http://www.valuable-viral-video.com/images/vvvlogo_favicon.ico" />
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109267080-1"></script>
 		<script>

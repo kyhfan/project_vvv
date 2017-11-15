@@ -372,7 +372,7 @@ figure figcaption .other div span:last-child {
 	padding: 21px 6px 138px;
 }
 #footer .inner .logo {
-	width: 45px;
+	width: 60px;
 	height: auto;
 	margin-bottom: 7px;
 }
@@ -1273,7 +1273,7 @@ figure figcaption .other div span:last-child {
 		max-width: 1040px;
 	}
 	#footer .inner .logo {
-		width: 76px;
+		width: 120px;
 		margin-bottom: 0;
 		float: left;
 	}

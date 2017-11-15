@@ -3,7 +3,7 @@
 							<div class="wrapper clearfix">
 								<div class="logo">
 									<a href="index.php">
-										<img src="./images/vvv_logo.png" alt="홈으로">
+										<img src="./images/vvv_logo_new.png" alt="홈으로">
 									</a>
 								</div>
 								<div class="nav">

@@ -8,7 +8,7 @@
 							</div>
 							<div class="grid">
 								<div class="row" id="search_area">
-									<div class="d-col-3 m-col-1 t-col-2">
+									<!-- <div class="d-col-3 m-col-1 t-col-2">
 										<figure>
 											<a href="video_detail.php?idx=<?=$data["idx"]?>">
 												<div class="thum">
@@ -40,7 +40,7 @@
 												</figcaption>
 											</a>
 										</figure>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<div class="more-cnt" id="search_more">
