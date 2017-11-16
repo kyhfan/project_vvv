@@ -961,6 +961,7 @@ figure figcaption .other div span:last-child {
 		display: block;
 		position: absolute;
 		top: -133px;
+		max-width: 1040px;
 	}
 	.banner.mobile-layout {
 		display: none;

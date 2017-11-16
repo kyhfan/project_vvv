@@ -1,7 +1,9 @@
 <?
 	include_once "./header_video.php";
 
-	$idx = $_REQUEST["idx"];
+	$idx 			= $_REQUEST["idx"];
+	$date_arr 		= explode(" ", $data["video_regdate"]);
+	$replace_date	= str_replace("-",".",$date_arr[0]);
 ?>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -121,6 +123,28 @@
 											</div>
 										</figcaption>
 									</figure>
+									<div class="details">
+										<div class="inner">
+											<div class="top">
+												<h5 class="publisher">
+													<?=$data["video_company"]?>
+												</h5>
+												<span class="date"><?=$replace_date?></span>
+											</div>
+											<div class="desc">
+												트렌치코트, 체크 재킷, 화이트 셔츠와 데님 팬츠까지. 올가을 내내 돌려 입을
+												베이식 아이템을 활용한 4가지 스타일 트렌치코트, 체크 재킷, 화이트 셔츠와 올가을 내내 돌려 입을 베이직 아이템.
+												을 활용한 4가지 스타일 트렌치코트, 체크 재킷, 화이트 셔츠와 데님 팬츠까지
+												올가을 내내 돌려 입을 베이직 아이템을 활용한 4가지 스타일 트렌치코트, 체
+												크 재킷, 화이트 셔츠와 데님 팬츠까지. 올가을 내내 돌려 입을 베이직 아이템
+												을 활용한 4가지 스타일 트렌치코트, 체크 재킷, 화이트 셔츠와 올가을 내내
+												돌려 입을 베이직 아이템을 활용한 4가지 스타일 트렌치코트, 체크 재킷, 화이
+											</div>
+											<button type="button" class="more">
+												<span></span>
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="divide-block vw"></div>
