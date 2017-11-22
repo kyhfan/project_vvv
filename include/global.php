@@ -331,7 +331,7 @@
 	$_gl["COUNTRY"]["EN"]["MDV"]            = "MALDIVES";
 	$_gl["COUNTRY"]["EN"]["MLT"]            = "MALTA";
 	$_gl["COUNTRY"]["EN"]["MNG"]            = "MONGOLIA";
-	$_gl["COUNTRY"]["EN"]["USA"]            = "UNITED STATES";
+	$_gl["COUNTRY"]["EN"]["USA"]            = "USA";
 	$_gl["COUNTRY"]["EN"]["UMI"]            = "UNITED STATES MINOR OUTLYING ISLANDS";
 	$_gl["COUNTRY"]["EN"]["VIR"]            = "VIRGIN ISLANDS, U.S.";
 	$_gl["COUNTRY"]["EN"]["MMR"]            = "MYANMAR";
@@ -410,7 +410,7 @@
 	$_gl["COUNTRY"]["EN"]["ECU"]            = "ECUADOR";
 	$_gl["COUNTRY"]["EN"]["ETH"]            = "ETHIOPIA";
 	$_gl["COUNTRY"]["EN"]["SLV"]            = "EL SALVADOR";
-	$_gl["COUNTRY"]["EN"]["GBR"]            = "UNITED KINGDOM";
+	$_gl["COUNTRY"]["EN"]["GBR"]            = "UK";
 	$_gl["COUNTRY"]["EN"]["VGB"]            = "VIRGIN ISLANDS, BRITISH";
 	$_gl["COUNTRY"]["EN"]["IOT"]            = "BRITISH INDIAN OCEAN TERRITORY";
 	$_gl["COUNTRY"]["EN"]["YEM"]            = "YEMEN, REPUBLIC OF";
