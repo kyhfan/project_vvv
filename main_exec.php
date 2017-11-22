@@ -172,10 +172,35 @@
 
 			echo $flag;
 		break;
+		
 		case "request_translate" :
 			$v_idx		= $_REQUEST["v_idx"];
 
 			$query 		= "INSERT INTO ".$_gl['translate_info_table']."(v_idx, requester_email, requester_ipaddr, request_regdate) values('".$v_idx."','".$_SESSION['ss_vvv_email']."','".$_SERVER['REMOTE_ADDR']."','".date("Y-m-d H:i:s")."')";
+			$result 	= mysqli_query($my_db, $query);
+
+			if($result) {
+				$flag = "Y";
+			}else{
+				$flag = "N";
+			}
+
+			echo $flag;
+		break;
+		
+		case "insert_video" :
+			$video_country		= $_REQUEST["video_country"];
+			$video_title		= $_REQUEST["video_title"];
+			$video_company		= $_REQUEST["video_company"];
+			$video_category		= $_REQUEST["video_category"];
+			$video_agency		= $_REQUEST["video_agency"];
+			$video_production	= $_REQUEST["video_production"];
+			$video_date			= $_REQUEST["video_date"];
+			$video_link			= $_REQUEST["video_link"];
+			$video_desc			= $_REQUEST["video_desc"];
+			$showYN				= $_REQUEST["showYN"];
+
+			$query 		= "INSERT INTO ".$_gl['video_info_table']."(video_company, video_agency, video_production, video_country, video_category, video_link, video_title, video_desc, showYN, video_date, video_regdate) values('".$video_company."','".$video_agency."','".$video_production."','".$video_country."','".$video_category."','".$video_link."','".$video_title."','".$video_desc."','".$showYN."','".$video_date."','".date("Y-m-d H:i:s")."')";
 			$result 	= mysqli_query($my_db, $query);
 
 			if($result) {
