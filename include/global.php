@@ -440,7 +440,7 @@
 	$_gl["COUNTRY"]["EN"]["PRK"]            = "KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF";
 	$_gl["COUNTRY"]["EN"]["GEO"]            = "GEORGIA";
 	$_gl["COUNTRY"]["EN"]["CAF"]            = "CENTRAL AFRICAN REPUBLIC";
-	$_gl["COUNTRY"]["EN"]["TWN"]            = "TAIWAN, PROVINCE OF CHINA";
+	$_gl["COUNTRY"]["EN"]["TWN"]            = "TAIWAN";
 	$_gl["COUNTRY"]["EN"]["CHN"]            = "CHINA";
 	$_gl["COUNTRY"]["EN"]["DJI"]            = "DJIBOUTI";
 	$_gl["COUNTRY"]["EN"]["GIB"]            = "GIBRALTAR";
@@ -468,7 +468,7 @@
 	$_gl["COUNTRY"]["EN"]["COK"]            = "COOK ISLANDS";
 	$_gl["COUNTRY"]["EN"]["HRV"]            = "CROATIA";
 	$_gl["COUNTRY"]["EN"]["CXR"]            = "CHRISTMAS ISLAND";
-	$_gl["COUNTRY"]["EN"]["KGZ"]            = "KYRGYZSTAN";
+	$_gl["COUNTRY"]["EN"]["KGZ"]            = "KYRGYZSTAN";   
 	$_gl["COUNTRY"]["EN"]["KIR"]            = "KIRIBATI";
 	$_gl["COUNTRY"]["EN"]["CYP"]            = "CYPRUS";
 	$_gl["COUNTRY"]["EN"]["THA"]            = "THAILAND";
@@ -505,7 +505,7 @@
 	$_gl["COUNTRY"]["EN"]["PCN"]            = "PITCAIRN";
 	$_gl["COUNTRY"]["EN"]["HMD"]            = "HEARD AND MC DONALD ISLANDS";
 	$_gl["COUNTRY"]["EN"]["HUN"]            = "HUNGARY";
-	$_gl["COUNTRY"]["EN"]["HKG"]            = "HONG KONG";
+	$_gl["COUNTRY"]["EN"]["HKG"]            = "HONGKONG";
 	
 	$_gl["CATEGORY"]["NGO"]						= "NGO";
 	$_gl["CATEGORY"]["HEALTH"]					= "건강";
@@ -523,5 +523,6 @@
 	$_gl["CATEGORY"]["LIQUOR"]					= "주류";
 	$_gl["CATEGORY"]["MEDIA"]					= "출판/미디어";
 	$_gl["CATEGORY"]["FASHION"]					= "패션";
-
+	$_gl["CATEGORY"]["EDUCATION"]				= "교육";
+	$_gl["CATEGORY"]["PR"]						= "기업PR";
 ?>
