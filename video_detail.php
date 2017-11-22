@@ -121,6 +121,25 @@
 											</div>
 										</figcaption>
 									</figure>
+									<div class="details">
+										<div class="inner">
+											<div class="top">
+												<h5 class="publisher">
+													<?=$data["video_agency"]?>
+												</h5>
+												<span class="date"><?=$data["video_date"]?></span>
+												<span class="nation">
+													<i>국가</i><?=$data["video_country"]?>
+												</span>
+											</div>
+											<div class="desc">
+												<?=$data["video_desc"]?>
+											</div>
+											<button type="button" class="more">
+												<span></span>
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="divide-block vw"></div>
