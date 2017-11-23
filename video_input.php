@@ -5,7 +5,7 @@
 		<h1>영상 정보 등록 페이지</h1>
 		<table class="table table-bordered" style="width:80%">
 			<tr>
-				<td>국가명</td>
+				<td>* 국가명</td>
 				<td>
 					<select id="video_country" class="form-control">
 						<option value="">선택하세요</option>
@@ -21,15 +21,15 @@
 				</td>
 			</tr>
 			<tr>
-				<td>영상제목</td>
+				<td>* 영상제목</td>
 				<td><input type="text" id="video_title" class="form-control" style="border:1px solid #ccc" placeholder="영상 제목을 입력해 주세요"></td>
 			</tr>
 			<tr>
-				<td>브랜드명</td>
+				<td>* 브랜드명</td>
 				<td><input type="text" id="video_company" class="form-control" style="border:1px solid #ccc" placeholder="브랜드명을 입력해 주세요"></td>
 			</tr>
 			<tr>
-				<td>브랜드 산업군</td>
+				<td>* 브랜드 산업군</td>
 				<td>
 					<select id="video_category" class="form-control">
 						<option value="">선택하세요</option>
@@ -53,12 +53,12 @@
 				<td><input type="text" id="video_production" class="form-control" style="border:1px solid #ccc" placeholder="프로덕션을 입력해 주세요"></td>
 			</tr>
 			<tr>
-				<td>Released Date</td>
+				<td>* Released Date</td>
 				<td><input type="text" id="video_date" class="form-control" style="border:1px solid #ccc" placeholder="영상 등록일을 예제와 같은 형식으로 입력해 주세요. ex)2017년 11월"></td>
 			</tr>
 			<tr>
-				<td>영상 URL</td>
-				<td><input type="text" id="video_link" class="form-control" style="border:1px solid #ccc" placeholder="영상 링크를 입력해 주세요"></td>
+				<td>* 영상 URL</td>
+				<td><input type="text" id="video_link" class="form-control" style="border:1px solid #ccc" placeholder="영상 링크를 입력해 주세요(형식은 https://www.youtube.com/watch?v=hHJBm2kjuXQ 이런 형태로 넣어주세요. 짧은 URL은 api 사용이 되지 않습니다.)"></td>
 			</tr>
 			<tr>
 				<td>캠페인 내용(자막 포함)</td>
@@ -124,18 +124,6 @@
 				return false;
 			}
 
-			if (video_agency == "")
-			{
-				alert("광고 대행사를 입력해 주세요.");
-				return false;
-			}
-
-			if (video_production == "")
-			{
-				alert("프로덕션을 입력해 주세요.");
-				return false;
-			}
-
 			if (video_date == "")
 			{
 				alert("영상 등록일을 입력해 주세요.");
@@ -145,12 +133,6 @@
 			if (video_link == "")
 			{
 				alert("영상링크를 입력해 주세요.");
-				return false;
-			}
-
-			if (video_desc == "")
-			{
-				alert("캠페인 내용을 입력해 주세요.");
 				return false;
 			}
 
