@@ -525,4 +525,5 @@
 	$_gl["CATEGORY"]["FASHION"]					= "패션";
 	$_gl["CATEGORY"]["EDUCATION"]				= "교육";
 	$_gl["CATEGORY"]["PR"]						= "기업PR";
+	$_gl["CATEGORY"]["BABY"]					= "유아";
 ?>
