@@ -10,7 +10,7 @@
     if ($sort_val == "new")
         $order_by = " ORDER BY idx DESC";
     else
-        $order_by = " ORDER BY like_count DESC";
+        $order_by = " ORDER BY like_count DESC, play_count DESC, comment_count DESC";
 	$view_pg            = 30;
 	$s_page				= $video_pg;
 
